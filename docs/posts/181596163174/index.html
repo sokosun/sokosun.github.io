@@ -3,9 +3,9 @@
     <head><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLNA サーバ</title>
-<meta name="description" content="概要 Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ">
-<link rel="canonical" href="https://sokosun.github.io/posts/648107812448288768/">
+<title>Tumblrテーマの簡易カスタム</title>
+<meta name="description" content="概要 ソフトウェア関連の情報なんて古いと価値がなくなったりしますので、 Tumblrの記事に「作成日時」を自動で挿入できるようにテーマを修正しました。 (デフォルトテーマでは非表示になっていました) その手順が分かりにくかったのでここに記録しておきます。">
+<link rel="canonical" href="https://sokosun.github.io/posts/181596163174/">
 <link rel="robots" href="/robots.txt" />
 
 <link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
@@ -40,62 +40,33 @@
         <main id="content">
 <article class="flex flex-col gap-10">
     <header class="flex flex-col gap-2">
-        <h2 class="text-4xl leading-snug font-bold text-gray-900">DLNA サーバ</h2>
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Tumblrテーマの簡易カスタム</h2>
 
         <div class="text-sm font-semibold text-gray-500 flex gap-3">
         
-<time datetime="2021-04-11 16:42:00 -0800 -0800" title="2021-04-11 16:42:00 -0800 -0800">
-    11 April 2021
+<time datetime="2019-01-01 08:55:00 -0800 -0800" title="2019-01-01 08:55:00 -0800 -0800">
+    1 January 2019
 </time>
         
         </div>
     </header>
     <section class="content text-lg text-gray-800">
-    <h1 id="概要">概要</h1>
-<p>Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ</p>
-<h1 id="候補">候補</h1>
-<p>音楽ファイルのみ・トランスコード機能は必要なし・DSD配信可能という条件で適当なDLNAサーバを立てようとして、以下のソフトウェアを試し、最終的に
-Universal Media Server に落ち着きました。</p>
-<ul>
-<li>Windows Media Player
-<ul>
-<li>設定は簡単</li>
-<li>DSD配信できない</li>
-</ul>
-</li>
-<li>foobar2000
-<ul>
-<li>設定は面倒 (foo_dsd_processor, foo_input_sacd, foo_upnp, foo_out_upnp etc.)</li>
-<li>ネイティブDSD配信できなかった(トランスコード配信なら可能)</li>
-<li>サービス化にNSSM必要 (<a href="https://nssm.cc">https://nssm.cc</a>)</li>
-</ul>
-</li>
-<li>Kodi
-<ul>
-<li>ソフトウェアが重い</li>
-<li>不要な機能が多くて調べるのが面倒</li>
-</ul>
-</li>
-<li>Universal Media Server
-<ul>
-<li>設定は比較的簡単</li>
-<li>ハマりどころが多い</li>
-</ul>
-</li>
-</ul>
-<h1 id="ハマりどころuniversal-media-server">ハマりどころ(Universal Media Server)</h1>
-<ul>
-<li>Java の実行環境が必要</li>
-<li>Windows の表示言語設定が日本語だとなぜか起動しない</li>
-<li>スリープ設定がデフォルトで有効になっている</li>
-<li>未登録レンダラ(再生機器)をデフォルト設定で使うと不安定
-<ul>
-<li>類似機器の設定ファイルをベースに設定ファイルを作成して登録しておく</li>
-</ul>
-</li>
-</ul>
-<h1 id="結論">結論</h1>
-<p>面倒なことがやりたくなければ Synology NAS 使っとけ。</p>
+    <h3 id="概要">概要</h3>
+<p>ソフトウェア関連の情報なんて古いと価値がなくなったりしますので、 Tumblrの記事に「作成日時」を自動で挿入できるようにテーマを修正しました。
+(デフォルトテーマでは非表示になっていました) その手順が分かりにくかったのでここに記録しておきます。</p>
+<h3 id="手順">手順</h3>
+<ol>
+<li>Tumblrの管理画面から「テーマの編集」を開いて「HTMLを編集」をクリック (以下参考画像)</li>
+</ol>
+<p><img src="../../media/181596163174_0.png" alt=""></p>
+<ol start="2">
+<li>posts の部分の Title の前に以下を追加<br>
+<strong>{Year}/{MonthNumber}/{DayOfMonth}</strong></li>
+</ol>
+<h3 id="補足">補足</h3>
+<p>本当はちゃんと以下を読んで理解してカスタムすべきですが、今回は日時を表示させたいだけだったのでズルしてます。</p>
+<p><strong>カスタムHTMLテーマを作成するには</strong><br>
+<a href="https://www.tumblr.com/docs/ja/custom_themes">https://www.tumblr.com/docs/ja/custom_themes</a></p>
 
     </section>
     

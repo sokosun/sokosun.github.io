@@ -4,8 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ESP32 で LG のテレビを叩く</title>
-<meta name="description" content="概要 LG のテレビはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。
-通信プロトコル 詳細は公開されていないのですが WebSocket でポート 3000 に JSON フォーマットでメッセージを送ればいいようです。lgtv2 のソースコードから読み取り＆実際に通信して挙動を確認しました。コマンド一覧はあるのにコマンド毎の指定値は不明なので検索するなりしてなんとか。">
+<meta name="description" content="概要 LG のテレビはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。">
 <link rel="canonical" href="https://sokosun.github.io/posts/712931605750104064/">
 <link rel="robots" href="/robots.txt" />
 
@@ -172,7 +171,7 @@ void loop() {
 <li>GoogleHomeからテレビ(LG製WebOS)をコントロールしてみるをESP32でやってみた <a href="https://qiita.com/ainehanta/items/ead336fcd8ba49b77b56">https://qiita.com/ainehanta/items/ead336fcd8ba49b77b56</a></li>
 </ul>
 <h1 id="そのほか">そのほか</h1>
-<p>WebSocketsClient のライブラリはエラーを吐けない (返り値 void) ので、うまく動作しないときはパケットキャプチャして WebSocket のパケットが飛んでいるか確認したほうが良さそうです。パケットが飛んでないことがよくありました。 &lt;/websocketsclient.h&gt;&lt;/wifi.h&gt;&lt;/arduino.h&gt;</p>
+<p>WebSocketsClient のライブラリはエラーを吐けない (返り値 void) ので、うまく動作しないときはパケットキャプチャして WebSocket のパケットが飛んでいるか確認したほうが良さそうです。パケットが飛んでないことがよくありました。</p>
 
     </section>
     

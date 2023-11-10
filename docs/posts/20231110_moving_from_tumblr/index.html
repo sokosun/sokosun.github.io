@@ -3,9 +3,9 @@
     <head><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLNA サーバ</title>
-<meta name="description" content="概要 Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ">
-<link rel="canonical" href="https://sokosun.github.io/posts/648107812448288768/">
+<title>Tumblr からの引っ越し</title>
+<meta name="description" content="概要 今までお世話になった Tumblr から github.io への引っ越しに際してメモ">
+<link rel="canonical" href="https://sokosun.github.io/posts/20231110_moving_from_tumblr/">
 <link rel="robots" href="/robots.txt" />
 
 <link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
@@ -40,62 +40,28 @@
         <main id="content">
 <article class="flex flex-col gap-10">
     <header class="flex flex-col gap-2">
-        <h2 class="text-4xl leading-snug font-bold text-gray-900">DLNA サーバ</h2>
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Tumblr からの引っ越し</h2>
 
         <div class="text-sm font-semibold text-gray-500 flex gap-3">
         
-<time datetime="2021-04-11 16:42:00 -0800 -0800" title="2021-04-11 16:42:00 -0800 -0800">
-    11 April 2021
+<time datetime="2023-11-10 12:37:26 &#43;0900 JST" title="2023-11-10 12:37:26 &#43;0900 JST">
+    10 November 2023
 </time>
         
         </div>
     </header>
     <section class="content text-lg text-gray-800">
     <h1 id="概要">概要</h1>
-<p>Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ</p>
-<h1 id="候補">候補</h1>
-<p>音楽ファイルのみ・トランスコード機能は必要なし・DSD配信可能という条件で適当なDLNAサーバを立てようとして、以下のソフトウェアを試し、最終的に
-Universal Media Server に落ち着きました。</p>
-<ul>
-<li>Windows Media Player
-<ul>
-<li>設定は簡単</li>
-<li>DSD配信できない</li>
-</ul>
-</li>
-<li>foobar2000
-<ul>
-<li>設定は面倒 (foo_dsd_processor, foo_input_sacd, foo_upnp, foo_out_upnp etc.)</li>
-<li>ネイティブDSD配信できなかった(トランスコード配信なら可能)</li>
-<li>サービス化にNSSM必要 (<a href="https://nssm.cc">https://nssm.cc</a>)</li>
-</ul>
-</li>
-<li>Kodi
-<ul>
-<li>ソフトウェアが重い</li>
-<li>不要な機能が多くて調べるのが面倒</li>
-</ul>
-</li>
-<li>Universal Media Server
-<ul>
-<li>設定は比較的簡単</li>
-<li>ハマりどころが多い</li>
-</ul>
-</li>
-</ul>
-<h1 id="ハマりどころuniversal-media-server">ハマりどころ(Universal Media Server)</h1>
-<ul>
-<li>Java の実行環境が必要</li>
-<li>Windows の表示言語設定が日本語だとなぜか起動しない</li>
-<li>スリープ設定がデフォルトで有効になっている</li>
-<li>未登録レンダラ(再生機器)をデフォルト設定で使うと不安定
-<ul>
-<li>類似機器の設定ファイルをベースに設定ファイルを作成して登録しておく</li>
-</ul>
-</li>
-</ul>
-<h1 id="結論">結論</h1>
-<p>面倒なことがやりたくなければ Synology NAS 使っとけ。</p>
+<p>今までお世話になった Tumblr から github.io への引っ越しに際してメモ</p>
+<h1 id="経緯">経緯</h1>
+<p>これまでミニブログとして Markdown が使える Tumblr を使用していたのですが、エディタの仕様変更により Markdown が使い物にならなくなってしまったので github.io へ引っ越しました。</p>
+<h1 id="引っ越し問題">引っ越し問題</h1>
+<h3 id="html-生成">HTML 生成</h3>
+<p>github.io はホスティングのみなので、何らかの方法で Web サイトを準備する必要があります。ということで、今までと同じように Markdown からエントリを生成できるものを探して Hugo を試してみました。プリプロセッサマクロのような shortcodes という機能が独特ですが Markdown の方言を覚えることを考えれば悪くないのかと思います。</p>
+<h3 id="エントリ変換">エントリ変換</h3>
+<p>Tumblr から Hugo にインポートするツールはいくつか存在するのですが、試してみたところうまくいかなかったので GUI から HTML でエクスポートして、<a href="https://github.com/aaronsw/html2text">aaronsw/html2text</a> で変換かけて失敗箇所を手動で修正するなどして対応しました。</p>
+<p>リンク破損、メディア破損、直打ちタグ破損、コードブロック破損、テーブル破損などの修正が必要でした。内部的な仕様変更起因でしょうが、2019年以前のエントリは比較的破損が少ないようです。</p>
+<p>なお Tumblr API を使えば生の Markdown 形式でエントリを取得できるので、比較的修正箇所が少なくてすむと思われます。それでもリンク破損やらメディア破損やらは発生しそうですが。</p>
 
     </section>
     

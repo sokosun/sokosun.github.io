@@ -3,9 +3,9 @@
     <head><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLNA サーバ</title>
-<meta name="description" content="概要 Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ">
-<link rel="canonical" href="https://sokosun.github.io/posts/648107812448288768/">
+<title>Wirecard のアクティベーション</title>
+<meta name="description" content="概要 Newegg.com で MIR (Mail-in Rebate) 付きの商品を買って手続きをしたところ Wirecard のプリペイドカードが届いた。カードのアクティベーションに手間取ったのでその手続きを記録。">
+<link rel="canonical" href="https://sokosun.github.io/posts/184504232204/">
 <link rel="robots" href="/robots.txt" />
 
 <link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
@@ -40,62 +40,29 @@
         <main id="content">
 <article class="flex flex-col gap-10">
     <header class="flex flex-col gap-2">
-        <h2 class="text-4xl leading-snug font-bold text-gray-900">DLNA サーバ</h2>
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Wirecard のアクティベーション</h2>
 
         <div class="text-sm font-semibold text-gray-500 flex gap-3">
         
-<time datetime="2021-04-11 16:42:00 -0800 -0800" title="2021-04-11 16:42:00 -0800 -0800">
-    11 April 2021
+<time datetime="2019-04-28 23:35:00 -0800 -0800" title="2019-04-28 23:35:00 -0800 -0800">
+    28 April 2019
 </time>
         
         </div>
     </header>
     <section class="content text-lg text-gray-800">
-    <h1 id="概要">概要</h1>
-<p>Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ</p>
-<h1 id="候補">候補</h1>
-<p>音楽ファイルのみ・トランスコード機能は必要なし・DSD配信可能という条件で適当なDLNAサーバを立てようとして、以下のソフトウェアを試し、最終的に
-Universal Media Server に落ち着きました。</p>
-<ul>
-<li>Windows Media Player
-<ul>
-<li>設定は簡単</li>
-<li>DSD配信できない</li>
-</ul>
-</li>
-<li>foobar2000
-<ul>
-<li>設定は面倒 (foo_dsd_processor, foo_input_sacd, foo_upnp, foo_out_upnp etc.)</li>
-<li>ネイティブDSD配信できなかった(トランスコード配信なら可能)</li>
-<li>サービス化にNSSM必要 (<a href="https://nssm.cc">https://nssm.cc</a>)</li>
-</ul>
-</li>
-<li>Kodi
-<ul>
-<li>ソフトウェアが重い</li>
-<li>不要な機能が多くて調べるのが面倒</li>
-</ul>
-</li>
-<li>Universal Media Server
-<ul>
-<li>設定は比較的簡単</li>
-<li>ハマりどころが多い</li>
-</ul>
-</li>
-</ul>
-<h1 id="ハマりどころuniversal-media-server">ハマりどころ(Universal Media Server)</h1>
-<ul>
-<li>Java の実行環境が必要</li>
-<li>Windows の表示言語設定が日本語だとなぜか起動しない</li>
-<li>スリープ設定がデフォルトで有効になっている</li>
-<li>未登録レンダラ(再生機器)をデフォルト設定で使うと不安定
-<ul>
-<li>類似機器の設定ファイルをベースに設定ファイルを作成して登録しておく</li>
-</ul>
-</li>
-</ul>
-<h1 id="結論">結論</h1>
-<p>面倒なことがやりたくなければ Synology NAS 使っとけ。</p>
+    <h3 id="概要">概要</h3>
+<p>Newegg.com で MIR (Mail-in Rebate) 付きの商品を買って手続きをしたところ Wirecard
+のプリペイドカードが届いた。カードのアクティベーションに手間取ったのでその手続きを記録。</p>
+<h3 id="手続き">手続き</h3>
+<p>MIRの申請用PDFをダウンロード、印刷、記入、商品のバーコードを貼って送付したあと、しばらくしてプリペイドカードが届いた。有効期限は6か月、ブランドはマス
+ターカード。アクティベーション用の電話番号の書かれたシールがカードに貼り付けられていたが、まずはWebで手続きできないか確認してみた。そうしたらどうも</p>
+<p><strong>Wirecard は Web でアクティベーションできない</strong></p>
+<p>らしかったので、電話をかけてアクティベーションしてみた。よくある自動音声対応(英語orスペイン語)なので別に難しくはないんだけど(16桁のカード番号を押して
+最後に#(pound key)を入力とか)アクティベーションの最後の確認時に</p>
+<p><strong>5-digit corresponding number on your account</strong></p>
+<p>これが <strong>郵便番号</strong> だと分からなかった、ZIPとかPostalとか言ってくれればいいんだけどおそらく違う番号も設定できるんだろう。</p>
+<p>アクティベーション完了後にPINが聞こえてくるのでそれをメモって終了。聞き取れなくても再度かけ直せば再度聞けるとは思う。</p>
 
     </section>
     

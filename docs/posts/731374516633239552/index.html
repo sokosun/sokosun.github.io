@@ -4,8 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>printf の書式は分かるのに std::cout で桁揃えする方法を思い出せないときに見るエントリ</title>
-<meta name="description" content="概要 printf の書式はソラで書けるけど std::cout で同じことをする方法が出てこない俺のためのチートシート。特に std::format が使えない環境のための覚書。
-書式 #include &lt;iostream&gt; #include &lt;iomanip&gt; // std::setw, std::setfill #include &lt;bitset&gt; // std::hex #include &lt;format&gt; // C&#43;&#43;20 int i = 123; // Output: &quot;i = 123(0x007b)&quot; printf(&quot;i = %4d(0x%04x)\n&quot;, i, i); std::cout &lt;&lt; &quot;i = &quot; &lt;&lt; std::setfill(&#39; &#39;) &lt;&lt; std::setw(4) &lt;&lt; i &lt;&lt; &quot;(0x&quot; &lt;&lt; std::setfill(&#39;0&#39;) &lt;&lt; std::setw(4) &lt;&lt; std::hex &lt;&lt; i &lt;&lt; &quot;)&quot; &lt;&lt; std::endl; std::cout &lt;&lt; std::format(&quot;i = {:4d}(0x{:04x})&quot;, i, i) &lt;&lt; std::endl; // C&#43;&#43;20 double d = 12.">
+<meta name="description" content="概要 printf の書式はソラで書けるけど std::cout で同じことをする方法が出てこない俺のためのチートシート。特に std::format が使えない環境のための覚書。">
 <link rel="canonical" href="https://sokosun.github.io/posts/731374516633239552/">
 <link rel="robots" href="/robots.txt" />
 
