@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP32 で TP-Link TC70 をコントロール</title>
+<meta name="description" content="概要 AtomS3 (ESP32) からネットワークカメラ (TP-Link TC70) のパン・チルトを ONVIF プロトコルで制御した話
+Your browser does not support HTML5 video.">
+<link rel="canonical" href="https://sokosun.github.io/posts/719616058550550528/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">ESP32 で TP-Link TC70 をコントロール</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2023-06-09 11:55:00 &#43;0900 JST" title="2023-06-09 11:55:00 &#43;0900 JST">
+    9 June 2023
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>AtomS3 (ESP32) からネットワークカメラ (TP-Link TC70) のパン・チルトを ONVIF プロトコルで制御した話</p>
+
+
+<!-- Shortcode 'video.html' -->
+
+<figure >
+  <video playsinline controls class="player" preload="metadata" data-poster="" width=100% >
+    <source src="/media/719616196586176512_0.mp4">
+    <p>
+      Your browser does not support HTML5 video.
+      Here is <a href="/media/719616196586176512_0.mp4">">a link to download the video</a>.
+    </p>
+  </video>
+  
+  
+</figure>
+
+<h1 id="はじめに">はじめに</h1>
+<p>TP-Link のネットワークカメラは ONVIF というオープンプロトコルに対応していて外部からパン・チルト等の制御が可能です。スマホをVRゴーグルにセッ
+トしてスマホの傾きとパン・チルトを同期すれば面白そうな気がしたので動画のもの作ってをみました。</p>
+<h1 id="設計">設計</h1>
+<p>スマホ内蔵の加速度センサを使用して全てスマホアプリで実現することもできるのですが、<!-- raw HTML omitted -->スマホアプリを作ったことがない<!-- raw HTML omitted -->ストリーミ
+ング再生部分の実装が面倒な気がしたので、姿勢検出＆パン・チルト制御には AtomS3 を使用することにしました。またスマホと AtomS3 の姿勢の連動には
+USB Type-C male to Type-C male アダプタを使用しました。</p>
+<h1 id="onvif">ONVIF</h1>
+<p>ONVIF で PTZ (PanTiltZoom) を操作するには SOAP (HTTP の POST を使って XML
+形式のコマンド・レスポンスをやり取り) を実装すればよいので ONVIF の仕様書を参考に必要なコマンドを探しました。詳細はサンプルコード。</p>
+<h1 id="姿勢検出">姿勢検出</h1>
+<p>AtomS3 には6軸加速度センサが内蔵されているので、加速度センサの出力を madgwick フィルタに通して姿勢を取得しました。詳細はサンプルコード。</p>
+<h1 id="サンプルコード">サンプルコード</h1>
+<p><a href="https://github.com/sokosun/atoms3_tc70_control/">https://github.com/sokosun/atoms3_tc70_control/</a></p>
+<h1 id="そのほか">そのほか</h1>
+<p>どの XML パーサが Arduino に適していて、かつ XML namespace 対応なのかよくわからなかったので、とりあえず XML
+namespace 非対応のものを使用しました。そんなわけで他のネットワークカメラは ONVIF 対応でもサンプルコードそのままでは制御できないと思います。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

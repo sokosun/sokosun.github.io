@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEF LSX の扱い方</title>
+<meta name="description" content="概要 KEF LSX というトラブルの多いネットワークスピーカーについて、私の環境で起きた問題と対策のまとめ。
+接続について コンセントのアースを接続 不定期にパリパリとノイズが乗る症状があったので条件を変えて試したところ、3ピンの電源タップを使用して、コンセントのアースを接続することで落ち着きました。
+有線LAN &amp; 左右スピーカ有線接続 無線接続時はスピーカーの音が一瞬途切れるような症状があったため有線接続としました。無線LANルーターは1台のみ、中継器なし、隣家の wifi も届かないような住宅環境でない限り無線 LAN は避けたほうが無難のようです。">
+<link rel="canonical" href="https://sokosun.github.io/posts/705502816921387008/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">KEF LSX の扱い方</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2023-01-04 17:11:00 &#43;0900 JST" title="2023-01-04 17:11:00 &#43;0900 JST">
+    4 January 2023
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>KEF LSX というトラブルの多いネットワークスピーカーについて、私の環境で起きた問題と対策のまとめ。</p>
+<h1 id="接続について">接続について</h1>
+<h3 id="コンセントのアースを接続">コンセントのアースを接続</h3>
+<p>不定期にパリパリとノイズが乗る症状があったので条件を変えて試したところ、3ピンの電源タップを使用して、コンセントのアースを接続することで落ち着きました。</p>
+<h3 id="有線lan--左右スピーカ有線接続">有線LAN &amp; 左右スピーカ有線接続</h3>
+<p>無線接続時はスピーカーの音が一瞬途切れるような症状があったため有線接続としました。無線LANルーターは1台のみ、中継器なし、隣家の wifi
+も届かないような住宅環境でない限り無線 LAN は避けたほうが無難のようです。</p>
+<h1 id="再生について">再生について</h1>
+<h3 id="aux-spdif">AUX, SPDIF</h3>
+<p>アナログ入力、光入力はド安定なので wifi 絡みのトラブルを避けるために外部 DAC を使用するのも一つの手です。</p>
+<h3 id="bluetooth-airplay">Bluetooth, AirPlay</h3>
+<p>基本的に安定していますが左右スピーカー無線接続時はプツプツ途切れる症状が出ます。</p>
+<h3 id="dlna">DLNA</h3>
+<p>DLNA 再生時に一時停止してからプレイリストをリセットして別の曲を再生し始めると<strong>1曲毎に止まる症状</strong>が発生します。この症状はコンセントを抜いてから挿
+し直して強制的に再起動することで治ります。</p>
+<h3 id="spotify">Spotify</h3>
+<p>基本的に安定していますが、最初に赤外線リモコンで電源 ON にしてから接続したほうが良さそうです。</p>
+<h1 id="アプリについて">アプリについて</h1>
+<h3 id="kef-control">KEF Control</h3>
+<p>KEF Control
+を複数台のスマホで使うと不審な挙動をします。赤外線リモコンだと問題は起きていないので、入力切替などは基本的にリモコンを使用しています。KEF Control
+はファームウェア更新・ケーブルモード切替・イコライザーなどに使用します。</p>
+<h3 id="kef-stream">KEF Stream</h3>
+<p>KEF Stream を DLNA コントローラとして使用すると<strong>1曲毎に止まる症状</strong>を発生させがちなので別のソフトウェアを使うべきです。</p>
+<h1 id="ファームウェアについて">ファームウェアについて</h1>
+<h3 id="ファームウェアは最新版52">ファームウェアは最新版(5.2)</h3>
+<p>古いファームウェアでは Bluetooth
+接続中に音が途切れるとコイル鳴きのような音が鳴る症状がありましたが、最新のファームウェアでは改善しました。ファームウェアは KEF Control
+で更新できますが、スマホの地域設定次第で異なるファームウェアが落ちてくるようです。</p>
+<h1 id="結論">結論</h1>
+<p>電源アース含めて全部有線接続して、操作は赤外線リモコン使用、音楽再生には Spotify・AUX・SPDIF・Bluetooth を使用するのが安定。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

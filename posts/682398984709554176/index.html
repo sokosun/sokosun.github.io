@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTX1660 で 8K (HDMI2.0b) 出力</title>
+<meta name="description" content="概要 LG の 8K テレビと GTX1660 を 8K (HDMI 2.0b) で接続する方法">
+<link rel="canonical" href="https://sokosun.github.io/posts/682398984709554176/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">GTX1660 で 8K (HDMI2.0b) 出力</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2022-04-24 16:46:00 &#43;0900 JST" title="2022-04-24 16:46:00 &#43;0900 JST">
+    24 April 2022
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>LG の 8K テレビと GTX1660 を 8K (HDMI 2.0b) で接続する方法</p>
+<h1 id="背景">背景</h1>
+<p>GTX1660 の HDMI2.0b 端子は規格上 8K 出力(30p YCC420)できるはずなのに、最近の HDMI2.1 対応 8K
+テレビにつないでも 8K 解像度が選択できない(ことが多い)ので選択できるようにする方法を調べたまとめ</p>
+<h1 id="手順">手順</h1>
+<p>Custom Resolution Utility をダウンロードして実行。</p>
+<p><a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU</a></p>
+<p>Extension block の HDMI 2.1 Support を HDMI 2.0 Support のみに修正、4:2:0 resolutions
+に 7680x4320@30Hz を追加。もしくは以下のページからダウンロードしたプロファイルをインポート。OK 押して restart.exe
+叩くと選択できるようになる。</p>
+<p>&lt;https://www.monitortests.com/forum/Thread-Nvidia-GeForce-GTX-1660-super-and-
+LG-65NANO953NA-8K-resolution-troubles&gt;</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

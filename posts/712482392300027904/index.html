@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP32 で HEOS デバイスを叩く</title>
+<meta name="description" content="概要 最近のデノンやマランツのアンプはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。
+通信プロトコル &ldquo;HEOS Protocol&rdquo; と検索すればデノン、マランツ、B&amp;W などのダウンロードページがみつかりました。telnet でポート1255に接続してコマンドを送ると JSON フォーマットで応答が返ってくるようです。">
+<link rel="canonical" href="https://sokosun.github.io/posts/712482392300027904/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">ESP32 で HEOS デバイスを叩く</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2023-03-22 09:09:18 &#43;0000 UTC" title="2023-03-22 09:09:18 &#43;0000 UTC">
+    22 March 2023
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>最近のデノンやマランツのアンプはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。</p>
+<h1 id="通信プロトコル">通信プロトコル</h1>
+<p>&ldquo;HEOS Protocol&rdquo; と検索すればデノン、マランツ、B&amp;W などのダウンロードページがみつかりました。telnet でポート1255に接続してコマンドを送ると JSON フォーマットで応答が返ってくるようです。</p>
+<h1 id="用意するもの">用意するもの</h1>
+<ul>
+<li>ESP32 の開発基板</li>
+<li>ブレッドボード・操作ボタン・ジャンパ</li>
+<li>HEOS CLI Protocol Specification (仕様書)</li>
+<li>Arduino IDE + esp32 + ArduinoJson</li>
+</ul>
+<h1 id="完成写真">完成写真</h1>
+<p><img src="../../media/712482392300027904_0.jpg" alt=""></p>
+<h1 id="サンプルコード">サンプルコード</h1>
+<p>Pin14 に接続したボタンを押すと Mute on/off 切り替えするサンプル</p>
+<ul>
+<li>ssid, password, heosdevice は要書き換え</li>
+<li>HEOS デバイスが固定IPであることを前提としているので動的IPの場合は追加のコードが必要</li>
+</ul>
+<pre><code>#include &lt;wifi.h&gt;
+#include &lt;arduinojson.h&gt;
+
+WiFiClient self;
+
+const char* ssid     = &quot;SSID&quot;;
+const char* password = &quot;PASSWORD&quot;;
+const IPAddress heosdevice(192,168,1,40);
+const int heosport = 1255;
+
+volatile bool g_irq0 = false;
+char g_buf[1024];
+long g_pid = 0; // 0 is handled as invalid
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+  Serial.print(&quot;Connecting to &quot;);
+  Serial.println(ssid);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(&quot;.&quot;);
+  }
+  Serial.print(&quot;\r\nWiFi connected\r\n&quot;);
+
+  self.connect(heosdevice, heosport);
+  Serial.print(&quot;Connecting to HEOS device\r\n&quot;);
+
+  if(self.connected()){
+    Serial.print(&quot;Connected\r\n&quot;);
+
+    self.print(&quot;heos://player/get_players\r\n&quot;);
+    int len = waitJsonResponse();
+    if(len&gt;0){
+      g_pid = getPlayerId(g_buf);
+    }
+    
+    Serial.print(&quot;Command: Get Players\r\n&quot;);
+    Serial.print(&quot;Response: &quot;);
+    Serial.write(g_buf, len);
+  }
+
+  pinMode(14, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(14), setIRQ0, FALLING);
+}
+
+// @return length of a json packet. 0 if failed.
+size_t waitJsonResponse(){
+  int nestlevel = -1;
+  size_t readlen = 0;
+
+  while(1){
+    if (self.available()) {
+      char c = self.read();
+      g_buf[readlen++] = c;
+
+      if(c == '{'){
+        nestlevel++;
+      }else if(c == '}'){
+        nestlevel--;
+        if(nestlevel = 1024){
+        return 0; // error (Buffer limit)
+      }
+    }
+  }
+
+  return readlen;
+}
+
+long getPlayerId(char* buf){
+  StaticJsonDocument doc;
+  DeserializationError error = deserializeJson(doc, buf);
+  if (error) {
+    Serial.print(&quot;deserializeJson() failed: &quot;);
+    Serial.println(error.c_str());
+    return 0;
+  }
+
+  JsonObject payload_0 = doc[&quot;payload&quot;][0];
+  long payload_0_pid = payload_0[&quot;pid&quot;];
+  return payload_0_pid;
+}
+
+void loop() {
+  if (self.available()) {
+    char c = self.read();
+    Serial.print(c);
+  }
+
+  if(g_irq0){
+    Serial.print(&quot;toggleMute\r\n&quot;);
+    toggleMute();
+    g_irq0 = false;
+  }
+}
+
+void setIRQ0(){
+  g_irq0 = true;
+}
+
+void toggleMute(){
+  if(!self.connected()){
+    return;
+  }
+  if(g_pid == 0){
+    return;
+  }
+
+  auto command = String(&quot;heos://player/toggle_mute?pid=&quot;) + String(g_pid) + String(&quot;\r\n&quot;);
+  auto len = command.length();
+  if(len&gt;255){
+    return;
+  }
+
+  char buf[256];
+  command.toCharArray(buf, len+1);
+  self.write(buf, len);
+
+  return;
+}
+</code></pre>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

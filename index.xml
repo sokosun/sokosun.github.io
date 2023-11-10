@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ahoy There! on X に書ききれないことはここに</title>
+    <link>https://sokosun.github.io/</link>
+    <description>Recent content in Ahoy There! on X に書ききれないことはここに</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>{year}</copyright>
+    <lastBuildDate>Mon, 16 Oct 2023 21:51:32 +0000</lastBuildDate>
+    <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>printf の書式は分かるのに std::cout で桁揃えする方法を思い出せないときに見るエントリ</title>
+      <link>https://sokosun.github.io/posts/731374516633239552/</link>
+      <pubDate>Mon, 16 Oct 2023 21:51:32 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/731374516633239552/</guid>
+      <description>概要 printf の書式はソラで書けるけど std::cout で同じことをする方法が出てこない俺のためのチートシート。特に std::format が使えない環境のための覚書。
+書式 #include &amp;lt;iostream&amp;gt; #include &amp;lt;iomanip&amp;gt; // std::setw, std::setfill #include &amp;lt;bitset&amp;gt; // std::hex #include &amp;lt;format&amp;gt; // C++20 int i = 123; // Output: &amp;quot;i = 123(0x007b)&amp;quot; printf(&amp;quot;i = %4d(0x%04x)\n&amp;quot;, i, i); std::cout &amp;lt;&amp;lt; &amp;quot;i = &amp;quot; &amp;lt;&amp;lt; std::setfill(&#39; &#39;) &amp;lt;&amp;lt; std::setw(4) &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;quot;(0x&amp;quot; &amp;lt;&amp;lt; std::setfill(&#39;0&#39;) &amp;lt;&amp;lt; std::setw(4) &amp;lt;&amp;lt; std::hex &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;quot;)&amp;quot; &amp;lt;&amp;lt; std::endl; std::cout &amp;lt;&amp;lt; std::format(&amp;quot;i = {:4d}(0x{:04x})&amp;quot;, i, i) &amp;lt;&amp;lt; std::endl; // C++20 double d = 12.</description>
+    </item>
+    <item>
+      <title>ESP32 でスマート電球を叩く</title>
+      <link>https://sokosun.github.io/posts/721269376884621312/</link>
+      <pubDate>Tue, 27 Jun 2023 09:05:54 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/721269376884621312/</guid>
+      <description>概要 ESP32(AtomS3) から TP-Link のフルカラースマート電球 L530E を制御した記録
+Your browser does not support HTML5 video.</description>
+    </item>
+    <item>
+      <title>ESP32 で TP-Link TC70 をコントロール</title>
+      <link>https://sokosun.github.io/posts/719616058550550528/</link>
+      <pubDate>Fri, 09 Jun 2023 11:55:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/719616058550550528/</guid>
+      <description>概要 AtomS3 (ESP32) からネットワークカメラ (TP-Link TC70) のパン・チルトを ONVIF プロトコルで制御した話
+Your browser does not support HTML5 video.</description>
+    </item>
+    <item>
+      <title>それ AtomS3 Lite でできたよ</title>
+      <link>https://sokosun.github.io/posts/718554394473463808/</link>
+      <pubDate>Sun, 28 May 2023 09:41:10 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/718554394473463808/</guid>
+      <description>概要 AtomS3 Lite のボタンで TP-Link P105 スマートプラグを操作できるようにした顛末
+Your browser does not support HTML5 video.</description>
+    </item>
+    <item>
+      <title>Joker8 ビルドログ</title>
+      <link>https://sokosun.github.io/posts/717088319286214656/</link>
+      <pubDate>Fri, 12 May 2023 14:18:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/717088319286214656/</guid>
+      <description>概要 本エントリは自作キーボードキット「Joker8」のオレオレビルドログです。組立手順説明書と比べて以下の点が異なります。
+XIAO RP2040 の代わりに XIAO ESP32C3 を使用 USB 接続ではなく WiFi 接続 ファームウェアは自作 組立手順説明書: https://blog.</description>
+    </item>
+    <item>
+      <title>ABS キーキャップの塗装</title>
+      <link>https://sokosun.github.io/posts/717085704087273473/</link>
+      <pubDate>Fri, 12 May 2023 13:36:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/717085704087273473/</guid>
+      <description>概要 ABS のキーキャップをガンダムマーカーエアブラシで塗装してみた記録
+準備 塗装にあたり以下のものを用意しました。ABS はアルコールで割れやすくなるらしいので要プライマー。
+ABS キーキャップ (未塗装) プライマー ガンダムマーカーエアブラシシステム ガンダムマーカー 完成写真 塗装時の多少のムラはちゃんと引けて写真で見る限りはそれなりに映えるものになりました。顔料の粒子が大きいらしく平滑性はでておらず触るとざらつきを感じます。</description>
+    </item>
+    <item>
+      <title>それ AtomS3 でできるよ</title>
+      <link>https://sokosun.github.io/posts/714389489555996672/</link>
+      <pubDate>Wed, 12 Apr 2023 19:21:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/714389489555996672/</guid>
+      <description>概要 M5STACK の AtomS3 Lite を試してみた記録
+製品詳細: https://docs.m5stack.com/en/core/AtomS3%20Lite
+はじめに ESP32 を試すのに純正の開発基板を購入したのですが、Amazon Dash Button のようにボタンを押したら WiFi にパケットを送る程度の用途であれば M5STACK の ATOMS3 Lite が使いやすそうなので試しに買ってみました。特徴は以下の通り。</description>
+    </item>
+    <item>
+      <title>JTC を持ち上げてみる</title>
+      <link>https://sokosun.github.io/posts/713321344309264384/</link>
+      <pubDate>Sat, 01 Apr 2023 00:24:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/713321344309264384/</guid>
+      <description>概要 新卒から15年勤めた JTC を辞めたので退職ポエムを書いてみました。よくJTC はクソという文脈で語られることを見かけるので逆に良かったところを挙げています。そもそも悪い会社なら15年も勤めないですし、実際そんなに悪くはなかったはず。
+自己紹介 業種は製造業 修士卒(情報科学) 業務は主に組み込みエンジニア・ソフトウェアエンジニア 15年のうち5年はアメリカ赴任 良かったところ 一言でまとめれば超ホワイト。働いている人はいい人が多いし、コミュニケーションも感情ではなく論理で行われる。社内アンケートを取ったら「経営層がクソ」って意見が 結構出てくるくらい心理的安全性（報復されない安心感）もる。</description>
+    </item>
+    <item>
+      <title>ラズパイでパケットキャプチャ</title>
+      <link>https://sokosun.github.io/posts/713189321355689984/</link>
+      <pubDate>Thu, 30 Mar 2023 13:25:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/713189321355689984/</guid>
+      <description>概要 ESP32 の動作確認のためにパケットキャプチャできる環境をラズパイで構築したのでその覚書
+目的 ESP32 が期待通りにパケットを出力しているか、および家電・スマホアプリの間でどのような通信が行われているのかの確認
+方針 ルーターでパケットキャプチャできれば簡単なのですが、普通の家庭用ルーターにそんな機能は無いので、 代わりにラズパイをWifiブリッジとして動作させてパケットキャプチャすることにしました。 有線接続機器間のパケットキャプチャは必要ないので非対応です。(有線LANアダプタ使えばできますが)</description>
+    </item>
+    <item>
+      <title>サンワサプライ 700-AC036W</title>
+      <link>https://sokosun.github.io/posts/713121681594548224/</link>
+      <pubDate>Wed, 29 Mar 2023 19:30:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/713121681594548224/</guid>
+      <description>概要 旅行用にUSB充電器 (サンワサプライ 700-AC036W) を買った覚書
+写真は比較用のスマホに乗せています
+充電器選定 最近充電器を持ち歩くことが増えたので自宅用と旅行用を分けるために以下の条件で探しました。
+USB 3口以上 プラグが折りたためる USB-PD で 30W 以上出せる 安宿のコンセントでも干渉しにくい はじめは Anker の適当なものを買おうかと思って Anker 735 Charger などを検討してみたものの高過ぎるように感じたので、ちょうどセールだったサンワサプライ 700-AC036W にしました。スマホの幅に収まるサイズってのは実にコンパクトです。</description>
+    </item>
+    <item>
+      <title>ESP32 でヤマハのAVアンプを叩く</title>
+      <link>https://sokosun.github.io/posts/713030308432412672/</link>
+      <pubDate>Tue, 28 Mar 2023 10:18:11 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/713030308432412672/</guid>
+      <description>概要 ヤマハのAVアンプはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。
+通信プロトコル 公式に仕様書が配布されているところは見つけられなかったのですが &amp;ldquo;Yamaha Extended Control API Specification&amp;rdquo; と検索することで仕様書がみつかりました。HTTP で接続して GET (一部コマンドは POST) で操作できるようです。なお未確認ですが現行製品ではプロトコルが違うかもしれません。</description>
+    </item>
+    <item>
+      <title>ESP32 で LG のテレビを叩く</title>
+      <link>https://sokosun.github.io/posts/712931605750104064/</link>
+      <pubDate>Mon, 27 Mar 2023 08:09:21 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/712931605750104064/</guid>
+      <description>概要 LG のテレビはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。
+通信プロトコル 詳細は公開されていないのですが WebSocket でポート 3000 に JSON フォーマットでメッセージを送ればいいようです。lgtv2 のソースコードから読み取り＆実際に通信して挙動を確認しました。コマンド一覧はあるのにコマンド毎の指定値は不明なので検索するなりしてなんとか。</description>
+    </item>
+    <item>
+      <title>ESP32 で HEOS デバイスを叩く</title>
+      <link>https://sokosun.github.io/posts/712482392300027904/</link>
+      <pubDate>Wed, 22 Mar 2023 09:09:18 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/712482392300027904/</guid>
+      <description>概要 最近のデノンやマランツのアンプはスマホアプリなどネットワーク経由で操作ができるので、実際に ESP32 を使って wifi 経由での操作を試してみました。
+通信プロトコル &amp;ldquo;HEOS Protocol&amp;rdquo; と検索すればデノン、マランツ、B&amp;amp;W などのダウンロードページがみつかりました。telnet でポート1255に接続してコマンドを送ると JSON フォーマットで応答が返ってくるようです。</description>
+    </item>
+    <item>
+      <title>IO-DATA UD-CO2S</title>
+      <link>https://sokosun.github.io/posts/705952427815337984/</link>
+      <pubDate>Mon, 09 Jan 2023 07:18:19 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/705952427815337984/</guid>
+      <description>概要 CO2センサー(I-O DATA UD-CO2S) を購入して非公式な動作確認をした記録
+背景 まともな CO2 センサーは当然のように1万円くらいするのですが、ここ最近になって I-O DATA UD-CO2S が \3480 まで値下がりしてきたので試しに1台購入してみました。そして仕様を確認したところ (公式には Windows 用のアプリケーションしか配布されていないのですが) どうも Virtual COM ポート経由でデータを読み出せるっぽいのでその動作も確認してみました。</description>
+    </item>
+    <item>
+      <title>KEF LSX の扱い方</title>
+      <link>https://sokosun.github.io/posts/705502816921387008/</link>
+      <pubDate>Wed, 04 Jan 2023 17:11:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/705502816921387008/</guid>
+      <description>概要 KEF LSX というトラブルの多いネットワークスピーカーについて、私の環境で起きた問題と対策のまとめ。
+接続について コンセントのアースを接続 不定期にパリパリとノイズが乗る症状があったので条件を変えて試したところ、3ピンの電源タップを使用して、コンセントのアースを接続することで落ち着きました。
+有線LAN &amp;amp; 左右スピーカ有線接続 無線接続時はスピーカーの音が一瞬途切れるような症状があったため有線接続としました。無線LANルーターは1台のみ、中継器なし、隣家の wifi も届かないような住宅環境でない限り無線 LAN は避けたほうが無難のようです。</description>
+    </item>
+    <item>
+      <title>YMDK split 64</title>
+      <link>https://sokosun.github.io/posts/686674299052064768/</link>
+      <pubDate>Fri, 10 Jun 2022 21:20:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/686674299052064768/</guid>
+      <description>概要 Shenzhen YMD Tech split 64 の組み立てに関する覚書
+はじめに 先日、PCキーボードのシフトキーを左手小指で押し続けたことによってひどい腱鞘炎になってしまったので、親指でシフトキーを押せてついでに肩こり対策もできそうな、 キー入力をカスタム可能な分割キーボードを導入しました。</description>
+    </item>
+    <item>
+      <title>GTX1660 で 8K (HDMI2.0b) 出力</title>
+      <link>https://sokosun.github.io/posts/682398984709554176/</link>
+      <pubDate>Sun, 24 Apr 2022 16:46:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/682398984709554176/</guid>
+      <description>概要 LG の 8K テレビと GTX1660 を 8K (HDMI 2.0b) で接続する方法</description>
+    </item>
+    <item>
+      <title>プログラマブルキーボード</title>
+      <link>https://sokosun.github.io/posts/673851261231185920/</link>
+      <pubDate>Thu, 20 Jan 2022 20:24:00 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/673851261231185920/</guid>
+      <description>プログラムを長時間書いているとシフトキーを押している左手小指が痛くなってくることがあるので親指でシフトキーを押せるようにAliexpressでプログラマブル キーボードを買ってみたのでそれに関するまとめ。というかキー設定用のツールをみつけるのに小一時間かかったのでその忘備録。
+以下の写真のようにスペースバーの手前にプログラマブルキーボードを配置して、親指でキーを押せるようにしたかった。
+買ったのは5キー、outemu 青軸、3Dプリントのケース、USBマイコンがCH551Gらしきもの。以下のページに9キーの同等品を分解している人がいたので詳細は省略。 // outemuキーは遊びが大きく気に入らないので換えたい
+中華製の格安なプログラマブル USBキーボードを買ってみた QMK VIAとは別物 http://www.</description>
+    </item>
+    <item>
+      <title>オーディオルーム</title>
+      <link>https://sokosun.github.io/posts/654539998228594688/</link>
+      <pubDate>Mon, 21 Jun 2021 16:39:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/654539998228594688/</guid>
+      <description>概要 近日中に引っ越しを控えているので、オーディオに合った部屋とはどんなものかに関して調べた。
+要検討項目 防音 ドア周囲をシーリング、換気口にサイレンサーをはめるなど隙間をなくすことで音漏れを減らす。 賃貸でなければさらに内窓をつけたり、壁を重くしたりするのもあり。 とはいえ吸音材は低周波には効果が弱いので、基本的に多少音漏れしても近所迷惑になりにくい物件を選ぶ。
+周波数特性 普通の部屋は定在波などの影響で周波数特性が癖を持つので部屋の角に家具を置いたり、一時反射面で吸音や拡散反射させる。 また石膏ボードなど普通の軽い壁・床・天井は共振周波数が可聴域にかかるので、場合によっては補強が必要かも。 低周波成分に関してはリスニングポイントで定在波の影響が小さくなるようにスピーカー配置を調整するというのも現実解で、 そういう意味ではブックシェルフ＋サブウーファーはチューニングしやすいかもしれない。</description>
+    </item>
+    <item>
+      <title>DLNA サーバ</title>
+      <link>https://sokosun.github.io/posts/648107812448288768/</link>
+      <pubDate>Sun, 11 Apr 2021 16:42:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/648107812448288768/</guid>
+      <description>概要 Synology NAS を Windows PC に置き換えたところ DLNA サーバ周りの設定に苦しんだのでそのまとめ
+候補 音楽ファイルのみ・トランスコード機能は必要なし・DSD配信可能という条件で適当なDLNAサーバを立てようとして、以下のソフトウェアを試し、最終的に Universal Media Server に落ち着きました。</description>
+    </item>
+    <item>
+      <title>液タブスタンド</title>
+      <link>https://sokosun.github.io/posts/641513504259686400/</link>
+      <pubDate>Thu, 28 Jan 2021 21:49:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/641513504259686400/</guid>
+      <description>Huion Kamvas 13 をスタンドなしで購入したのですが、USB電源の液晶モニタとして使うときにスタンドが欲しいと思うことが何度もあったので3Dプリ ントしました（純正スタンド単品に5000円支払うのは負けた気がしますし
+自分で設計するのは面倒なので探してみるとピッタリのものがありまして、Kamvas 13 に合わせた設計となっているので手首に出っ張りが当たったりせず、またキ ーボードをまたいで設置できました。ただし、ネジの受け部分がインサートナットではないのでタッピングネジでないと取り付けに苦労します（STLの修正まではやってい ません</description>
+    </item>
+    <item>
+      <title>Huion Kamvas 13</title>
+      <link>https://sokosun.github.io/posts/638446828520718336/</link>
+      <pubDate>Fri, 25 Dec 2020 13:25:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/638446828520718336/</guid>
+      <description>概要 中華液タブ(Huion Kamvas 13)を買ったので(主にハードウェアの)レビュー的なまとめ。iPad Pro を買おうか考えたこともあったので、別にディスるつもりはないのですが、それとの比較も含めて。
+良かったところ 安価 (約2万円、Apple Pencil 1.</description>
+    </item>
+    <item>
+      <title>ImageMagick おぼえがき</title>
+      <link>https://sokosun.github.io/posts/633908045094715392/</link>
+      <pubDate>Thu, 05 Nov 2020 02:03:41 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/633908045094715392/</guid>
+      <description>概要 ImageMagick という画像ファイルの処理に特化した多機能なコンソールプログラムがあるのですが、 簡単な処理のために毎回使い方を調べている気がするので、よく使うコマンドを記録しました。
+コマンド ファイル形式を変更 // png から jpg に変換 $ magick src.</description>
+    </item>
+    <item>
+      <title>60% キーボード</title>
+      <link>https://sokosun.github.io/posts/632977856100712448/</link>
+      <pubDate>Sun, 25 Oct 2020 19:38:44 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/632977856100712448/</guid>
+      <description>概要 フルキーボードのテンキーがマウスとぶつかるのが気になって、$40の廉価60%キーボードを買ったので設定や調べたことなどのまとめ。
+仕様 個人的に 右Alt、右Ctrl、右Shift、CapsLock、アプリケーションキー は不要、カーソルキーは（ショートカットに使うので）必須、 キーバインドをゴリゴリに変更すると環境が変わったときに慣れないので基本的にデフォルトを踏襲、無線は不要、 ついでに15年ぶりに青軸を使ってみようかと思って選んだら以下のものになりました。 NiZ Plum Atom 68 を買おうかとも思ってたんですが、お値段が4倍するのでこれを試してからでも遅くはないだろうという判断です。</description>
+    </item>
+    <item>
+      <title>2020年7月のUSBメモリ事情</title>
+      <link>https://sokosun.github.io/posts/625015467118100480/</link>
+      <pubDate>Wed, 29 Jul 2020 22:19:58 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/625015467118100480/</guid>
+      <description>概要 現在市場に出回っているUSBメモリは書き込み速度がピンキリで 64GBの容量なのに書き込み速度 5MB/s のような使い物にならないレベルのものがあります。
+そこで、書き込み速度を中心に現行品の情報を調べてみました。なお、モデルチェンジで(同型番のまま)書き込み速度が低下することもあるので、実際の情報は異なる可能性があります。
+個人的な前提 USBメモリは容量が大きいものの方が高速な傾向がありますが、私はブータブルUSB、もしくは小容量のファイルコピーにしか使わないので32GBで十分と考えています。
+// ブータブルUSBは32GB以上あっても意味がないことが多い(Windows純正のFAT32フォーマッタが上限32GB)</description>
+    </item>
+    <item>
+      <title>Lenovo ThinkCentre M90n Nano</title>
+      <link>https://sokosun.github.io/posts/624741136166240256/</link>
+      <pubDate>Mon, 27 Jul 2020 18:39:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/624741136166240256/</guid>
+      <description>概要 Lenovo ThinkCentre M90n Nano を買っていろいろ調べたまとめ
+背景 昨年暮れに NAS を導入して便利に使っていたのですが、Syncthing の同期対象ファイル数を10万以上に増やしたところ使い物にならないくらい遅くなってしまいまして もうちょっと性能が欲しいと思っていたところ Lenovo の Cyber Monday in July というセールで ThinkCentre M90n Nano がいい感じだったので買ってしまいました。</description>
+    </item>
+    <item>
+      <title>Nintendo Switch で動く自作コントローラ製作記録</title>
+      <link>https://sokosun.github.io/posts/622817521539645440/</link>
+      <pubDate>Mon, 06 Jul 2020 01:04:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/622817521539645440/</guid>
+      <description>概要 Nintendo Switch の グルーヴコースター ワイワイパーティ のためにコントローラ(BOOSTER)を自作したのでその記録
+はじめに グルーヴコースターの専用コントローラは自作するのが定石のようで、 検索してみるといろいろと見つけることができます。 しかし検索してみつかるもののほとんどはPC(Steam)版を対象としており、 Nintendo Switch は普通のUSBコントローラを受け付けないのでそのままでは使用することができません。 いろいろ試してみた結果、以下を組み合わせて Nintendo Switch で動作させることに成功しました。</description>
+    </item>
+    <item>
+      <title>NASの使い道</title>
+      <link>https://sokosun.github.io/posts/616396148864925696/</link>
+      <pubDate>Sun, 26 Apr 2020 03:59:00 -0800</pubDate>
+      <guid>https://sokosun.github.io/posts/616396148864925696/</guid>
+      <description>概要 半年くらい NAS (Synology DS119j) を使って分かったことのまとめ
+背景 そもそも NAS を買ったのは安かったというのが一番の理由で 自動バックアップ環境が構築できればそれで充分だと思っていたのですが 想像していなかった便利な機能、不便な機能があったのでまとめてみました。</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://sokosun.github.io/posts/614516847136653312/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sokosun.github.io/posts/614516847136653312/</guid>
+      <description>忙しい人のための Fusion 360 title: &amp;ldquo;忙しい人のための Fusion 360&amp;rdquo; date: 2020-04-05T10:08:00-08:00 概要 個人非商用なら無償で使える Fusion 360 という 3DCAD アプリケーションがあります。結構便利なんですが、機能が多過ぎて最低限必要なところが分かりにくいと感じたので、これだけ覚えればなんとかなる機能をまとめました。</description>
+    </item>
+  </channel>
+</rss>

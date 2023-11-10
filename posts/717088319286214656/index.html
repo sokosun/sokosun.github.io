@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joker8 ビルドログ</title>
+<meta name="description" content="概要 本エントリは自作キーボードキット「Joker8」のオレオレビルドログです。組立手順説明書と比べて以下の点が異なります。
+XIAO RP2040 の代わりに XIAO ESP32C3 を使用 USB 接続ではなく WiFi 接続 ファームウェアは自作 組立手順説明書: https://blog.">
+<link rel="canonical" href="https://sokosun.github.io/posts/717088319286214656/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Joker8 ビルドログ</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2023-05-12 14:18:00 &#43;0900 JST" title="2023-05-12 14:18:00 &#43;0900 JST">
+    12 May 2023
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>本エントリは自作キーボードキット「Joker8」のオレオレビルドログです。組立手順説明書と比べて以下の点が異なります。</p>
+<ul>
+<li>XIAO RP2040 の代わりに XIAO ESP32C3 を使用</li>
+<li>USB 接続ではなく WiFi 接続</li>
+<li>ファームウェアは自作</li>
+</ul>
+<p>組立手順説明書: <a href="https://blog.alglab.net/archives/joker8-build-guide/">https://blog.alglab.net/archives/joker8-build-guide/</a></p>
+<h1 id="完成写真">完成写真</h1>
+<p><img src="../../media/717088319286214656_0.jpg" alt=""></p>
+<h1 id="はじめに">はじめに</h1>
+<p>USB/Bluetooth 接続ではなく WiFi 接続して家電を操作できるマクロパッドが欲しいと思ったので作ってみました。booth
+で自作キーボードキットを探してみると WiFi マクロパッドに使用できそうな Joker8 をみつけたのでこちらをカスタムすることにしました。</p>
+<p>補足: 自作キーボード界隈では Pro Micro というマイコンモジュールがよく使用されるのですが、Pro Micro とピン互換で WiFi
+対応のモジュールがみあたらないので、Pro Micro 用のキットを WiFi 接続マクロパッドに仕立てるのは面倒です</p>
+<h1 id="組み立て">組み立て</h1>
+<p>説明書に含まれないカスタム要素は以下の通り</p>
+<ul>
+<li>アンテナのコネクタが穴を通らなかったので着せ替えプレートはなし</li>
+<li>アンテナは飛び出したまま(将来的には裏面に両面テープで貼り付け？)</li>
+<li><a href="../717085704087273473/">キーキャップを塗装</a></li>
+</ul>
+<h1 id="ファームウェア">ファームウェア</h1>
+<p>以下のエントリで確認した機能をガッチャンコして修正しました。なお電池駆動まではやっていません。</p>
+<ul>
+<li><a href="../712482392300027904/">ESP32 で HEOS デバイスを叩く</a></li>
+<li><a href="../712931605750104064/">ESP32 で LG のテレビを叩く</a></li>
+</ul>
+<p>リポジトリ: <a href="https://github.com/sokosun/joker8_esp32c3_heos_lgtv">https://github.com/sokosun/joker8_esp32c3_heos_lgtv</a></p>
+<h1 id="機能">機能</h1>
+<p>オーディオアンプの入力切替＆音量調整やディスプレイの入力切替がワンボタンで動作します。具体的には赤外線リモコンを本体に向けて、入力切替ボタンを押して、カーソ
+ルキーで希望の入力を選んで、決定ボタンで入力を切り替えて…ということがボタン一発で可能になります。また外部サービスに依存していないので、家庭内 WiFi
+さえ生きて入ればインターネット不通でも動作します。</p>
+<p>具体的な機能は以下の通り</p>
+<ul>
+<li>音量20に設定 (Spotify用)</li>
+<li>音量25に設定＆入力をUSB-DACに変更 (PC用)</li>
+<li>音量30に設定＆入力を光入力に変更 (ゲーム用)</li>
+<li>HDMI入力1 に設定</li>
+<li>HDMI入力2 に設定</li>
+<li>HDMI入力3 に設定</li>
+<li>HDMI入力4 に設定</li>
+</ul>
+<h1 id="そのほか">そのほか</h1>
+<p>キースイッチ押下時の立下り割込みを設定すると、スイッチを放すときにも割込みがかかる現象が(5個試してうち3個で)発生しました。原因の詳細は確認できていません
+がローレベル割込みに変更することで対処しました。なおはんだづけをやり直したり、ESP32C3 の IO MUX
+のフィルタ機能も試しましたが効果はありませんでした。</p>
+<p>標準の RP2040 マイコンは USB 接続のみ対応ですが、ESP32C3 なら USB/Bluetooth/WiFi 対応なので Bluetooth
+接続マクロパッドとしても使えるはずです。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

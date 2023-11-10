@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<meta name="description" content="忙しい人のための Fusion 360 title: &ldquo;忙しい人のための Fusion 360&rdquo; date: 2020-04-05T10:08:00-08:00 概要 個人非商用なら無償で使える Fusion 360 という 3DCAD アプリケーションがあります。結構便利なんですが、機能が多過ぎて最低限必要なところが分かりにくいと感じたので、これだけ覚えればなんとかなる機能をまとめました。">
+<link rel="canonical" href="https://sokosun.github.io/posts/614516847136653312/">
+<link rel="robots" href="/robots.txt" />
+
+<link rel="stylesheet" href="https://sokosun.github.io/css/app.min.b688ee5471e00e764f7bd7837b40f4a521563aeb0c2cd8d365c5da0a432bca34.css" integrity="sha256-tojuVHHgDnZPe9eDe0D0pSFWOusMLNjTZcXaCkMryjQ=" ></head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900"></h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="0001-01-01 00:00:00 &#43;0000 UTC" title="0001-01-01 00:00:00 &#43;0000 UTC">
+    1 January 0001
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="忙しい人のための-fusion-360">忙しい人のための Fusion 360</h1>
+<hr>
+<h2 id="date-2020-04-05t100800-0800">title: &ldquo;忙しい人のための Fusion 360&rdquo;
+date: 2020-04-05T10:08:00-08:00</h2>
+<h1 id="概要">概要</h1>
+<p>個人非商用なら無償で使える Fusion 360 という 3DCAD
+アプリケーションがあります。結構便利なんですが、機能が多過ぎて最低限必要なところが分かりにくいと感じたので、これだけ覚えればなんとかなる機能をまとめました。</p>
+<h1 id="メニュー">メニュー</h1>
+<p>Fusion 360 では以下のようにメニューが呼び出せます。</p>
+<p><img src="../../media/614516847136653312_0.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_1.jpg" alt=""></p>
+<p>最低限以下の項目(画像で矢印のついた項目)を覚えればなんとかなります。</p>
+<ul>
+<li>スケッチを作成</li>
+<li>押し出し</li>
+<li>回転</li>
+<li>スイープ</li>
+<li>ミラー</li>
+<li>フィレット</li>
+<li>面取り</li>
+<li>シェル</li>
+<li>結合</li>
+<li>移動／コピー</li>
+<li>削除</li>
+<li>3点を通過する平面</li>
+<li>STL形式で保存</li>
+</ul>
+<h1 id="必須機能">必須機能</h1>
+<h2 id="スケッチを作成">スケッチを作成</h2>
+<p><img src="../../media/614516847136653312_2.jpg" alt=""></p>
+<p>平面を選んで、選んだ平面上に基準となる図形を作図します。 操作自体は難しくないのですが2点ほど知っておくべきことがあります。</p>
+<p>1つ目は <strong>奥行方向に意図せず位置がずれる</strong>ことがあります。
+そもそも2次元のインタフェースで完全な3次元の操作は不可能なので、3次元方向のスケッチを作成したい場合は
+画像のような2次元視点でスケッチを完成させてから点なり線なりを移動ツールを使って平行移動させるのが確実です。</p>
+<p>2つ目は<strong>意図しない自動拘束</strong>のせいで操作が効かなくなることがあります。 3DCADツールには拘束という機能があり、
+例えば角を常に直角にしたり、辺の長さを固定して、 スケッチを修正した際に拘束した箇所を自動で追従させることができます。</p>
+<p>Fusion 360 はこの拘束を自動で追加する機能があり、設定で無効化することもできません。 特に原点基準でスケッチを描くと、原点拘束がついて
+移動させようとしても(エラーメッセージも何も出ずに)移動できないといったことが起きたりします。</p>
+<p>拘束の外し方やどんな拘束が効いているか確認するのは分かりにくいので、 もし操作が効かなくなったら、スケッチを削除して作り直す方が経験上早いです。</p>
+<h2 id="押し出し切り取り">押し出し(＆切り取り)</h2>
+<p>描いたスケッチを元にボディ(立体)を作ったり、ボディを削ったりする機能が押し出しです。 スケッチの選択した部分に対して押し出しできます。</p>
+<p><img src="../../media/614516847136653312_3.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_4.jpg" alt=""></p>
+<p>また、スケッチはボディにも作成できるので、押し出したボディに横から穴をあけるといったことができます。</p>
+<p><img src="../../media/614516847136653312_5.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_6.jpg" alt=""></p>
+<h2 id="回転">回転</h2>
+<p>回転ではスケッチを指定の軸に対して回転させてボディを作ることができます。</p>
+<p><img src="../../media/614516847136653312_7.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_8.jpg" alt=""></p>
+<h2 id="スイープ">スイープ</h2>
+<p>スイープは3次元のパスに沿って押し出す機能です。押し出しや回転ではできない曲がったものを作ることができます。</p>
+<p><img src="../../media/614516847136653312_9.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_10.jpg" alt=""></p>
+<p>さらにスイープを行う際にガイドレール(補助線)を追加すると、スイープしながら大きさを変えたりねじったりすることもできます。</p>
+<p><img src="../../media/614516847136653312_11.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_12.jpg" alt=""></p>
+<h2 id="フィレット面取りシェル">フィレット・面取り・シェル</h2>
+<p>フィレットは角に丸みをつける、面取りは角を切り落とす、シェルは中をくり抜く機能です。</p>
+<p><img src="../../media/614516847136653312_13.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_14.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_15.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_16.jpg" alt=""></p>
+<h2 id="平面の作成">平面の作成</h2>
+<p>スケッチを斜めの平面に作りたい、斜めで切り落としたいといったときは <strong>3点を通過する平面</strong>を定義して押し出しカットすればできます。</p>
+<p><img src="../../media/614516847136653312_17.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_18.jpg" alt=""></p>
+<h2 id="ミラー">ミラー</h2>
+<p>左右対称の形を作りたいときはミラー機能を使うと対称に複製できます。</p>
+<p><img src="../../media/614516847136653312_19.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_20.jpg" alt=""></p>
+<h2 id="stl形式で保存">STL形式で保存</h2>
+<p>3Dモデルを3Dプリントできる形式(STL)で出力するには<strong>STL形式で保存</strong>を呼び出せばよいのですが、
+ミラーを使った後のようにボディが複数ある場合は<strong>結合</strong>してから<strong>STL形式で出力</strong>してください。</p>
+<p>結合しないで出力するとスライサーがボディを別体だと認識してしまうため ミラー面で割れたり出力品質が下がったりする可能性があります。</p>
+<p><img src="../../media/614516847136653312_21.jpg" alt=""></p>
+<p><img src="../../media/614516847136653312_22.jpg" alt=""></p>
+<h1 id="最後に">最後に</h1>
+<p>Fusion 360 では特定のモードでしか表示されないメニューが結構あるので メニューがみつからないときは、違うモードに切り替わっている可能性があります。</p>
+<p>Fusion 360 ではスカルプトという機能を使って曲線の多い形状も作ることができるのですが、 慣れないと操作が難しいのでお勧めしません。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>
