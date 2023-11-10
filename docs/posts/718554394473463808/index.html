@@ -75,13 +75,16 @@
 <p>P105 のプロトコルはプロプライエタリなのですが数多くの実装が公開されています。いくつかソースコードを確認してみると http 通信で以下のシーケンスで通信すればよいことがわかりました。比較的簡単ですが、やり取りするデータが暗号化されたり base64 符号化されたりハッシュだったりして平文ではないのでハマるとバグを探すのが面倒だったりします。詳細はサンプルコードを参照してください。</p>
 <pre><code>P105      Client
  | handshake |
- |           | ; key, sessionID and timeout
+ | &lt;-------- | ; key
+ | --------&gt; | ; key, sessionID and timeout
  |           |
  |   login   |
- |           | ; token
+ | &lt;-------- | ; username(sha1), password and sessionID
+ | --------&gt; | ; token
  |           |
  | API calls |
- |           |
+ | &lt;-------- | ; token
+ | --------&gt; |
  |    ...    |
 </code></pre>
 <h1 id="実装">実装</h1>
