@@ -1,0 +1,18 @@
+body {
+  background-color: cyan;
+}
+
+.content pre {
+  line-height: 1; /* This property enables line-height one in ".content pre code" */
+}
+
+.content pre code {
+  font-size: 0.8em;
+  line-height: 1em;
+  padding-left: 0;
+}
+
+main#content > article {
+  padding: 1em;
+  background-color: white;
+}
