@@ -7,8 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Fri, 10 Nov 2023 12:37:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2023 17:15:58 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拡張機能の忘備録</title>
+      <link>https://sokosun.github.io/posts/20231115_extensions/</link>
+      <pubDate>Wed, 15 Nov 2023 17:15:58 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20231115_extensions/</guid>
+      <description>概要 ブラウザにインストールした拡張機能が多くなってきたので忘備録としてまとめ
+便利ツール Joplin Web Clipper - Web ページを Joplin (メモアプリケーション)に保存</description>
+    </item>
     <item>
       <title>Tumblr からの引っ越し</title>
       <link>https://sokosun.github.io/posts/20231110_moving_from_tumblr/</link>
