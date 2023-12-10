@@ -1,0 +1,12 @@
+# Homepage Config
+isSinglePage = true
+
+# Meta Config
+description = "Hello"
+
+# Header Configuration
+avatar = "img/avatar.png"
+
+[emoji]
+enableEmoji = true
+

@@ -1,0 +1,22 @@
+baseURL = 'https://sokosun.github.io/'
+languageCode = 'ja-jp'
+title = 'X に書ききれないことはここに'
+theme = 'lowkey'
+publishDir = 'docs'
+
+copyright = "{year}" # To make 2007 - 2022. Just add before {year} example: 2007 - {year}
+enableRobotsTXT = true
+
+# List Config
+summaryLength= 5
+paginate = 100
+
+[markup.highlight]
+      codeFences = false
+      guessSyntax = false
+      hl_Lines = ""
+      lineNoStart = 1
+      lineNos = false
+      lineNumbersInTable = false
+      tabWidth = 4
+      noClasses = false
