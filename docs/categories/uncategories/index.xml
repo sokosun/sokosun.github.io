@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategories on X に書ききれないことはここに</title>
+    <link>https://sokosun.github.io/categories/uncategories/</link>
+    <description>Recent content in Uncategories on X に書ききれないことはここに</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>{year}</copyright>
+    <lastBuildDate>Wed, 13 Dec 2023 16:16:32 +0900</lastBuildDate>
+    <atom:link href="https://sokosun.github.io/categories/uncategories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>uBlock Origin と Stylus の設定例</title>
+      <link>https://sokosun.github.io/posts/20231213_ubo_stylus/</link>
+      <pubDate>Wed, 13 Dec 2023 16:16:32 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20231213_ubo_stylus/</guid>
+      <description>概要 uBlock Origin と Stylus を使って Web ページをコントロールする実例まとめ。特に広告以外の要素を非表示にしたり改変する方法について。</description>
+    </item>
+  </channel>
+</rss>
