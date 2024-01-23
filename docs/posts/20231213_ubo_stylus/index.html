@@ -64,6 +64,9 @@
 <p>以下の記述で <code>jp.reuters.com</code> において JavaScript 読み込みを無効化します。<code>jp.reuters.com</code> はお行儀の悪い挙動をするページで、スクロールを禁止してきたり、キーボード入力を乗っ取ってきたりします。(キーボード入力が乗っ取られるとブラウザのキーボードショートカットが使えなくなります) 個別に対策をするのが面倒なので JavaScript 丸ごと止めるのが簡単です。なお一部画像がロードされなくなります。またブラウザの設定でも同じことができます。</p>
 <pre><code>||jp.reuters.com^$script
 </code></pre>
+<p><code>eow.alc.co.jp</code> のように JavaScript ファイルではなくインラインスクリプトとして実装されている場合は以下のように記述することで JavaScript 実行を禁止できます。この記述によって <code>eow.alc.co.jp</code> における PageUp/PageDown キーを押したときのスクロールアニメーションを無効化することができます。また <code>eow.alc.co.jp</code> ではブラウザで JavaScript をブロックすると JavaScript を有効化する旨のメッセージが表示されますが、以下の記述でブロックした場合はそのメッセージが表示されることはありません。</p>
+<pre><code>||eow.alc.co.jp^$inline-script
+</code></pre>
 <h3 id="指定ドメインへのリンク要素を非表示">指定ドメインへのリンク要素を非表示</h3>
 <p>以下の記述で <code>nikkei225jp.com</code> にある li 要素のうち、<strong>有料記事サイト</strong> <code>moneyworld.jp</code> と <code>nikkei.com</code> への a 要素 を含むものを<strong>非表示</strong>にします。</p>
 <pre><code>nikkei225jp.com##li:has(a[href*=&quot;moneyworld.jp&quot;])

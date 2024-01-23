@@ -27,6 +27,12 @@ uBlock Origin はインストールするだけで多くの広告が非表示に
 ||jp.reuters.com^$script
 ```
 
+```eow.alc.co.jp``` のように JavaScript ファイルではなくインラインスクリプトとして実装されている場合は以下のように記述することで JavaScript 実行を禁止できます。この記述によって ```eow.alc.co.jp``` における PageUp/PageDown キーを押したときのスクロールアニメーションを無効化することができます。また ```eow.alc.co.jp``` ではブラウザで JavaScript をブロックすると JavaScript を有効化する旨のメッセージが表示されますが、以下の記述でブロックした場合はそのメッセージが表示されることはありません。
+
+```
+||eow.alc.co.jp^$inline-script
+```
+
 ### 指定ドメインへのリンク要素を非表示
 
 以下の記述で ```nikkei225jp.com``` にある li 要素のうち、**有料記事サイト** ```moneyworld.jp``` と ```nikkei.com``` への a 要素 を含むものを**非表示**にします。
