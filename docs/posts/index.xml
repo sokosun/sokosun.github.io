@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Wed, 17 Jan 2024 16:33:18 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2024 15:18:38 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>仮想マウスで EOS Utility を叩く</title>
+      <link>https://sokosun.github.io/posts/20240124_virtual_mouse/</link>
+      <pubDate>Wed, 24 Jan 2024 15:18:38 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240124_virtual_mouse/</guid>
+      <description>概要 AtomS3 Lite を使用して作った仮想マウスデバイスで EOS Utility のシャッターボタンを自動クリックしてみた記録</description>
+    </item>
     <item>
       <title>Royalaxe Y68</title>
       <link>https://sokosun.github.io/posts/20240117_royalaxe_y68/</link>

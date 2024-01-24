@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仮想マウスで EOS Utility を叩く</title>
+<meta name="description" content="概要 AtomS3 Lite を使用して作った仮想マウスデバイスで EOS Utility のシャッターボタンを自動クリックしてみた記録">
+<link rel="canonical" href="https://sokosun.github.io/posts/20240124_virtual_mouse/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.71258d71f9d63737714d198af52fbe240337a3a336c0f955c246fa5b9c69fb4c.css" integrity="sha256-cSWNcfnWNzdxTRmK9S++JAM3o6M2wPlVwkb6W5xp+0w=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">仮想マウスで EOS Utility を叩く</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2024-01-24 15:18:38 &#43;0900 JST" title="2024-01-24 15:18:38 &#43;0900 JST">
+    24 January 2024
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>AtomS3 Lite を使用して作った仮想マウスデバイスで EOS Utility のシャッターボタンを自動クリックしてみた記録</p>
+<h1 id="eos-utility">EOS Utility</h1>
+<p>EOS Utility という Canon 純正のソフトウェアを使用すると Canon のカメラと接続して遠隔操作（撮影）ができます。しかしこのソフトウェアは GUI しか提供されていないので一定時間毎に撮影したい場合は一定時間毎に GUI のシャッターボタンをクリックする必要があります。というわけで10秒毎にクリックイベントを発生させる仮想マウスデバイスを作って自動クリックさせてみました。</p>
+<p>// Canon のカメラに搭載されているインターバル撮影機能はライブビュー機能と同時に使用することができませんが今回作った仮想マウスデバイスはライブビュー機能と同時に使用することが可能です</p>
+<h1 id="完成品">完成品</h1>
+
+
+<!-- Shortcode 'video.html' -->
+
+<figure >
+  <video playsinline controls class="player" preload="metadata" data-poster="" width=100% >
+    <source src="/media/virtual_mouse_0.mp4">
+    &lt;video&gt;
+  </video>
+  
+  
+</figure>
+
+<p>あらかじめマウスカーソルをシャッターボタンに合わせた状態で、AtomS3 Lite のボタンを押して青色LED点灯＝10秒毎にクリックイベントを発生するモードにしています。これにより手動で10秒毎にシャッターボタンを押すのと同じ結果が得られます。</p>
+<h1 id="ソースコード">ソースコード</h1>
+<p><a href="https://github.com/sokosun/atoms3_timer_clicker">https://github.com/sokosun/atoms3_timer_clicker</a></p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2024 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>
