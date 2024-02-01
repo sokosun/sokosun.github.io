@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creality K1</title>
+<meta name="description" content="概要 Creality K1 の初期設定関連のメモ
+はじめに ブラックフライデーセールで Creality K1 を買って使ってみたところ、初期ロットから改良されているにもかかわらず、気になる点がいくつかあったのでメモを残しておきます。なお reddit にも似たようなものがあります">
+<link rel="canonical" href="https://sokosun.github.io/posts/20240201_creality_k1/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.71258d71f9d63737714d198af52fbe240337a3a336c0f955c246fa5b9c69fb4c.css" integrity="sha256-cSWNcfnWNzdxTRmK9S++JAM3o6M2wPlVwkb6W5xp+0w=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Creality K1</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2024-02-01 16:33:38 &#43;0900 JST" title="2024-02-01 16:33:38 &#43;0900 JST">
+    1 February 2024
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>Creality K1 の初期設定関連のメモ</p>
+<h1 id="はじめに">はじめに</h1>
+<p>ブラックフライデーセールで Creality K1 を買って使ってみたところ、初期ロットから改良されているにもかかわらず、気になる点がいくつかあったのでメモを残しておきます。なお reddit にも似たようなものがあります</p>
+<ul>
+<li><a href="https://www.reddit.com/r/crealityk1/comments/13qml39/creality_k1_printing_101_read_this_before_you/">https://www.reddit.com/r/crealityk1/comments/13qml39/creality_k1_printing_101_read_this_before_you/</a></li>
+<li><a href="https://www.reddit.com/r/crealityk1/comments/15gt3aw/creality_k1_printing_102_read_this_might_helps/">https://www.reddit.com/r/crealityk1/comments/15gt3aw/creality_k1_printing_102_read_this_might_helps/</a></li>
+</ul>
+<h1 id="ハードウェア関係">ハードウェア関係</h1>
+<h3 id="前面ドア">前面ドア</h3>
+<p>前面ドアが90度くらいしか開かないので正面から両手を突っ込んで作業したいときに左腕がドアに干渉します。交換用ヒンジをプリントして取り替えるのが良さそうです。私はまだやっていませんが。</p>
+<p><a href="https://www.printables.com/model/526107-creality-k1-270deg-door-hinges-w-door-latch">https://www.printables.com/model/526107-creality-k1-270deg-door-hinges-w-door-latch</a></p>
+<h3 id="ケーブルガイド">ケーブルガイド</h3>
+<p>ケーブルガイドの可動域に対して蓋が小さいので、大きなものを印刷すると蓋に衝突してずれる、音を立てる、蓋が傷つくなどの問題があります。以下のようなライザーでケーブル可動域を確保するのが良さそうです。</p>
+<p><a href="https://www.thingiverse.com/thing:6342284">https://www.thingiverse.com/thing:6342284</a></p>
+<h3 id="フィラメントガイド">フィラメントガイド</h3>
+<p>いくつかプリントしてみたところ、ボーデンチューブの曲げがきつい分、無理やりエクストルーダでフィラメントを送り込んでいるような印象を受けました。私はライザーで本体上部に隙間を確保して、ケーブルガイドから抜いたボーデンチューブをその隙間に通し、曲率がきつくならないように配置しています。</p>
+<h3 id="ベッド傾き調整">ベッド傾き調整</h3>
+<p>初期状態ではベッドが 1㎜ 以上傾いており、印刷中に剥がれる問題が起きたため、公式のメンテナンス動画を参考に傾き調整を行いました。なお以下の URL にアクセスするとベッドの傾きを確認することができます。</p>
+<p>http://&lt;IP&gt;/#/home</p>
+<h3 id="オーバーハング">オーバーハング</h3>
+<p>オーバーハングを印刷するときに X+ 方向では綺麗に印刷できるのに X- 方向では粗が目立つ症状が発生しました。おそらくファンの向きからくるものと推測していますが未解決です。</p>
+<h3 id="スプールホルダー">スプールホルダー</h3>
+<p>印刷品質の観点から（日本では）スプールホルダーを使わずにフィラメントを防湿ケースに入れたまま使うのが有効です。検索するとダイソーの密閉容器 (330円・シリカゲル別売）を使用したり、イノマタの乾物ストッカー6.0 (600円程度・シリカゲル付き) を使用する例が見つかります。なおイノマタの乾物ストッカー4.0もありますが、こちらは内寸が 88x197x240 (WxDxH) [mm] なので一般的な直径 200mm のスプールに合いません。</p>
+<p>私はフィラメントをイノマタの乾物ストッカー6.0に入れて、上蓋に穴をあけてフィラメントを垂直に引き出しています。なおこの場合はフィラメントセンサの位置を変える必要があります。</p>
+<h3 id="純正フィラメント">純正フィラメント</h3>
+<p>ノーマルPLAの純正フィラメントがセールで \3000/2kg だったので買ってみました。実際使ってみるとノーブランド \1500/1kg くらいのものと印刷品質は変わらない印象でした。むしろセールでなければ割高なのでは？</p>
+<h3 id="フィラメント交換">フィラメント交換</h3>
+<p>Creality K1 のメニューから Extrude/Retract のボタンを押せば自動でフィラメント抜き取り・差し込みができるのですが、一度詰まらせてから差し込みができなくなりました。分解清掃すれば治ると思うのですが、分解が面倒なのと手動で差し込みできるので後回しになっています（そもそも以前使っていたプリンタは手動でしたし</p>
+<h1 id="ソフトウェア関係">ソフトウェア関係</h1>
+<h3 id="エレファントフット">エレファントフット</h3>
+<p>どうもファーストレイヤー印刷時にヘッドがベッドと近すぎるようでエレファントフットの症状が発生します。私はスライサーの設定で Z 方向に +0.05mm のオフセットをつけることで緩和していましたが、最新のファームウェア（V1.3.3.5）に <strong>3.New Expert Mode settings, supporting adjustments to flow and Z-axis offset during printing, supports nozzle PID calibration.</strong> とあるのでファームウェアの設定で調整できそうです。</p>
+<h3 id="gcode">gcode</h3>
+<p>3Dプリンタ関連の gcode には独自拡張があり、Klipper ベースの Creality K1 には以下のようなサムネイル画像埋め込みやマクロ<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> があります。Creality K1 本体の GUI は大小2種類（300x300, 96x96）のサムネイルを使用しており、Creality Print で生成した gcode ファイルには両方のサイズのサムネイルが含まれます<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 。なお Creality K1 本体の GUI にサムネイルのリサイズ機能は実装されていないようで、大サイズのサムネイルのみ埋め込んだ gcode ファイルを読み込ませると大サイズのサムネイルだけ表示され、小サイズのサムネイルは空白になります。</p>
+<pre><code>; png begin 96*96 3773 16 79 15
+; iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAABnWAAAZ1gEY0crtAAAO
+; // 中略 //
+; AAAASUVORK5CYII=
+; png end
+</code></pre>
+<h3 id="ベッド温度設定">ベッド温度設定</h3>
+<p>ベッド温度は変更できますが START_PRINT マクロ内で 50℃ (デフォルト値)に設定されてしまいます。ベッド温度を指定値に固定したい場合は START_PRINT を使用しないかデフォルト値を書き換える必要があります。</p>
+<h3 id="pressure-advance">Pressure Advance</h3>
+<p>1層目のフィル印刷時にムラが出て途切れる症状が発生しました。調べたところ Pressure Advance のパラメータを調整すれば改善しそうなのですが未対応です。</p>
+<h3 id="root化">root化</h3>
+<p>最新のファームウェアであれば本体の GUI を操作して root 化できます。これでリモートログインして printer.cfg とかを直接修正できるはず、まだやってないけど。</p>
+<h3 id="スライサー">スライサー</h3>
+<p>非純正スライサーを使用する場合はマクロを使用するように gcode を修正するのが良さそうです。例えば END_PRINT マクロを使うと印刷完了時にベッドを退避させる(10cm下げる)ことができます。</p>
+<p>参考: <a href="https://wiki.creality.com/en/Software/creality-print/three_party_platform">https://wiki.creality.com/en/Software/creality-print/three_party_platform</a></p>
+<p>また非純正スライサーで生成した gcode を印刷する場合は以下の URL にアクセスして gcode ファイルをアップロード＆印刷するのが便利かもしれません。</p>
+<p>http://&lt;IP&gt;/#/home</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>マクロは <a href="https://github.com/CrealityOfficial/K1_Series_Klipper/blob/main/config/K1_CR4CU220812S12/gcode_macro.cfg">gcode_macro.cfg</a> で定義されています&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Creality K1 用のサムネイル2つの他に旧機種用のサムネイルも含まれます&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2024 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

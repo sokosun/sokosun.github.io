@@ -7,8 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Wed, 24 Jan 2024 15:18:38 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2024 16:33:38 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creality K1</title>
+      <link>https://sokosun.github.io/posts/20240201_creality_k1/</link>
+      <pubDate>Thu, 01 Feb 2024 16:33:38 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240201_creality_k1/</guid>
+      <description>概要 Creality K1 の初期設定関連のメモ
+はじめに ブラックフライデーセールで Creality K1 を買って使ってみたところ、初期ロットから改良されているにもかかわらず、気になる点がいくつかあったのでメモを残しておきます。なお reddit にも似たようなものがあります</description>
+    </item>
     <item>
       <title>仮想マウスで EOS Utility を叩く</title>
       <link>https://sokosun.github.io/posts/20240124_virtual_mouse/</link>
