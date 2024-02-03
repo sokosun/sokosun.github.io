@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3Dプリントのためのモデル修正</title>
+<meta name="description" content="概要 STL ファイルを Fusion360 にインポート・加工してエクスポートする手順について">
+<link rel="canonical" href="https://sokosun.github.io/posts/20240203_stl_modification/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.71258d71f9d63737714d198af52fbe240337a3a336c0f955c246fa5b9c69fb4c.css" integrity="sha256-cSWNcfnWNzdxTRmK9S++JAM3o6M2wPlVwkb6W5xp+0w=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">3Dプリントのためのモデル修正</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2024-02-03 16:23:14 &#43;0900 JST" title="2024-02-03 16:23:14 &#43;0900 JST">
+    3 February 2024
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>STL ファイルを Fusion360 にインポート・加工してエクスポートする手順について</p>
+<h1 id="はじめに">はじめに</h1>
+<p>3Dプリンタでモデルを印刷する際に部分的に大きさを変えたいことがあります。例えば、ねじ穴の間隔を維持したまま高さを高くしたい場合にはスライサーの拡大縮小機能では対応できません。この場合、モデルデータを修正するのが早いので Fusion360 を使って修正する方法を以下に記します。</p>
+<h2 id="修正前後イメージ">修正前後イメージ</h2>
+<p><img src="../../media/stl_modification_0.jpg" alt=""></p>
+<p>オリジナルデータ: <a href="https://www.printables.com/model/680320-defiled-k1-max-riser-with-filament-relocator">https://www.printables.com/model/680320-defiled-k1-max-riser-with-filament-relocator</a></p>
+<h1 id="手順高さを高くする例">手順(高さを高くする例)</h1>
+<ol>
+<li><strong>メッシュ -&gt; 挿入 -&gt; メッシュの挿入</strong> でSTLファイルをインポート</li>
+<li><strong>メッシュ -&gt; 修正 -&gt; 平面切断</strong> を2回行って(切断面はXY平面、X距離で切断する高さを指定)伸ばすボディと伸ばさないボディに分割</li>
+<li><strong>メッシュ -&gt; 修正 -&gt; メッシュを尺度指定</strong> で伸ばすボディをZ方向のみ拡大</li>
+<li>伸ばさない部分を移動してから <strong>メッシュ -&gt; 修正 -&gt; 結合</strong> で結合</li>
+<li>結合したボディをSTLでエクスポート</li>
+</ol>
+<p>もちろん切断面・拡大方向を変更すれば高さではなく幅や奥行きの修正にも対応可能です。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2024 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

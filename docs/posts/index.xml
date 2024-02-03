@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Thu, 01 Feb 2024 16:33:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2024 16:23:14 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3Dプリントのためのモデル修正</title>
+      <link>https://sokosun.github.io/posts/20240203_stl_modification/</link>
+      <pubDate>Sat, 03 Feb 2024 16:23:14 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240203_stl_modification/</guid>
+      <description>概要 STL ファイルを Fusion360 にインポート・加工してエクスポートする手順について</description>
+    </item>
     <item>
       <title>Creality K1</title>
       <link>https://sokosun.github.io/posts/20240201_creality_k1/</link>
