@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Sat, 03 Feb 2024 16:23:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 14:50:04 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplify3D v5.1.2</title>
+      <link>https://sokosun.github.io/posts/20240205_simplify3d_v5/</link>
+      <pubDate>Mon, 05 Feb 2024 14:50:04 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240205_simplify3d_v5/</guid>
+      <description>概要 Creality K1 と一緒に使用している Simplify3D の設定に関するメモ</description>
+    </item>
     <item>
       <title>3Dプリントのためのモデル修正</title>
       <link>https://sokosun.github.io/posts/20240203_stl_modification/</link>

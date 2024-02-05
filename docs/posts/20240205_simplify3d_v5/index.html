@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simplify3D v5.1.2</title>
+<meta name="description" content="概要 Creality K1 と一緒に使用している Simplify3D の設定に関するメモ">
+<link rel="canonical" href="https://sokosun.github.io/posts/20240205_simplify3d_v5/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.356a2087b004aa122c83c24f9c1adbc6812496621e09e70f705f13257d28ad34.css" integrity="sha256-NWogh7AEqhIsg8JPnBrbxoEklmIeCecPcF8TJX0orTQ=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Simplify3D v5.1.2</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2024-02-05 14:50:04 &#43;0900 JST" title="2024-02-05 14:50:04 &#43;0900 JST">
+    5 February 2024
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>Creality K1 と一緒に使用している Simplify3D の設定に関するメモ</p>
+<h1 id="はじめに">はじめに</h1>
+<p>久しぶりに Simplify3D を使おうとしたら設定値が分からないということが頻発したので、また分からなくなったときのために調べたことを記録しておきます。なお Creality K1 &amp; 低価格 PLA での設定値になります。</p>
+<h1 id="プロセス設定値">プロセス設定値</h1>
+<p>必要な個所のみ抜粋しています。太字は特に重要な設定項目です。</p>
+<h3 id="extruder">Extruder</h3>
+<p>ハードウェアを変更しない限り変更する必要はありません。</p>
+<ul>
+<li>
+<p>General</p>
+<ul>
+<li>Nozzle Diameter: 0.40mm</li>
+<li>Extrusion Multiplier: 1.00 (キャリブレーションを行って調整した方が良い)</li>
+<li>Extrusion Width: Automatic</li>
+</ul>
+</li>
+<li>
+<p>Ooze Control</p>
+<ul>
+<li>Use Retraction: ON</li>
+<li>Retract Vertical Lift: 0.10mm (Anti-scar)</li>
+</ul>
+</li>
+</ul>
+<h3 id="layer">Layer</h3>
+<p>レイヤー高さ・壁厚・レイヤー高さ自動調整・初期レイヤー速度・シーム(開始)位置など頻繁に調整が必要です。</p>
+<ul>
+<li>
+<p>General</p>
+<ul>
+<li>Layer Height: 0.3000mm(標準), 0.2000mm(高強度) (より分解能が必要な場合は Adaptice Layer Height を有効化)</li>
+<li>Top Solid Layers: 3</li>
+<li>Bottom Solid Layers: 3</li>
+<li>Outline Perimeters: 2+ (表面の精度を求めるなら2では少ないことがある)</li>
+<li>Single outline corkscrew printing mode (vase mode): OFF (普通使わない)</li>
+</ul>
+</li>
+<li>
+<p>Adaptice Layer Height</p>
+<ul>
+<li><strong>Enable Adaptive Layer Heights</strong>: OFF(標準), ON(積層ピッチを低くして滑らかにしたい場合)</li>
+</ul>
+</li>
+<li>
+<p>First Layer Settings</p>
+<ul>
+<li>First Layer Units: Absolute (基準印刷速度変更時にも First Layer Speed を固定値にしたいので Absolute)</li>
+<li>First Layer Height: 0.3000mm</li>
+<li>First Layer Width: 0.40mm</li>
+<li><strong>First Layer Speed</strong>: 1500mm/min (25mm/s)</li>
+</ul>
+</li>
+<li>
+<p>Start Point Selection</p>
+<ul>
+<li><strong>Align start points at a specific XY location</strong>: モデルに応じて調整 (seam を気にしない場合を除き必須)</li>
+<li>Restrict start points to preferred regions: 出力結果を見ながら調整</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions">Additions</h3>
+<p>ブリム・ラフト使用時にのみ設定を変更します。</p>
+<ul>
+<li>
+<p>Skirt/Brim</p>
+<ul>
+<li>Use Skirt/Brim: OFF(標準), ON(ブリム使用時)</li>
+<li>Skirt Offset: 0.00mm (ブリム使用時)</li>
+<li>Skirt Outlines: 10+ (ブリム使用時)</li>
+</ul>
+</li>
+<li>
+<p>Raft</p>
+<ul>
+<li>Use Raft: OFF(標準), ON(ラフト使用時)
+<ul>
+<li>Raft Base Layers: 1 or 2</li>
+<li>Raft Top Layers: 3</li>
+<li>Raft Offset from Part: 3mm (基本的に調整不要)</li>
+<li><strong>Raft Separation Distance</strong>: 0.14mm (標準), 0mm (接地面積が狭いとき(完全に接着させる))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="infill">Infill</h3>
+<p>アイロニング ON/OFF を除いて、基本的に一度設定した後は変更する必要はありません。</p>
+<ul>
+<li>
+<p>Sparse Internal Infill</p>
+<ul>
+<li><strong>Internal Infill Pattern</strong>: any (歴史的に Fast Honeycomb を使用することが多いが最新版では Gyroid を選択可能)</li>
+</ul>
+</li>
+<li>
+<p>Dense Internal Infill</p>
+<ul>
+<li><strong>Dense Infill Layers</strong>: 2+</li>
+<li>Dense Infill Percentage: 50+</li>
+</ul>
+</li>
+<li>
+<p>Solid Layers</p>
+<ul>
+<li><strong>External Infill Pattern</strong>: Aligned</li>
+<li>External Pattern Rotation: 0 deg (必要に応じて変更)</li>
+<li><strong>Minimize direction changes (monotonic)</strong>: ON</li>
+</ul>
+</li>
+<li>
+<p>Ironing</p>
+<ul>
+<li>Iron Top Layers: OFF(標準), ON(アイロニング使用時(時間がかかるので注意))</li>
+</ul>
+</li>
+</ul>
+<h3 id="support">Support</h3>
+<p>デフォルト設定では精度が出ないのでサポート使用時は毎回確認することになります。低精度・サポート接触面は綺麗・剥がしやすい（印刷中に剥がれやすい）と高精度・サポート接触面は荒れる・剥がしにくい（印刷中に剥がれにくい）のトレードオフです。シビアなモデル形状の場合は微調整必須です。</p>
+<ul>
+<li>
+<p>General</p>
+<ul>
+<li>Support Infill Pattern: any (変えても効果を感じられない)</li>
+<li>Support Infill Percentage: 20% (必要に応じて微調整)</li>
+<li><strong>Support Outlines</strong>: 0(標準), 1+(サポート自体の強度が欲しい or モデルにサポートの側面を接触させてサポート強度を高めたい場合)</li>
+<li><strong>Support Inflation Distance</strong>: 0.0+mm (サポートが小さすぎる場合は gcode 見ながら調整)</li>
+<li>Combined Support Layers: 1(標準), 2(レイヤー高さ0.1mm or Adaptive Layer Height 有効時)</li>
+</ul>
+</li>
+<li>
+<p>Dense Supports</p>
+<ul>
+<li><strong>Upper Dense Support Layers</strong>: 2+ (必須)</li>
+<li>Lower Dense Support Layers: 0+ (たいてい0で十分)</li>
+<li>Dense Support Infill Percentage: 70% (これ以上は不要)</li>
+</ul>
+</li>
+<li>
+<p>Part Separation</p>
+<ul>
+<li><strong>Support Horizontal Offset from Part</strong>: 0.3mm (標準), 0.1mm(形状精度を出したい場合、ただし面は荒れる)</li>
+<li><strong>Upper Support Separation Layers</strong>: 1(標準), 0(剥がれやすい場合)</li>
+</ul>
+</li>
+</ul>
+<h3 id="temperature">Temperature</h3>
+<p>基本的にフィラメント設定に合わせます。デリケートな素材やブリッジ・オーバーハングなどシビアな形状ならキャリブレーションして温度を決めたほうが良さそうです。なお START_PRINT マクロ使用時はベッド温度が(実質的に)50℃固定になります。</p>
+<h3 id="cooling">Cooling</h3>
+<p>PLA なら基本的に Fan 100% にしておけば問題ありません。ABS なら風量を減らす調整が必要ですが、普段使わないので設定を詰めていません。</p>
+<h3 id="speeds">Speeds</h3>
+<p>基準印刷速度のみ調整すれば十分です。(実際に設定値ほどの速度は出ないので) 60mm/s 推奨のPLAで 150mm/s くらいに設定できます。ただし(実際に速度が出てしまうような)大きなモデルの場合は調整が必要です。また光沢のあるフィラメントの場合も（印刷速度で光沢感が変化するので）調整が必要です。</p>
+<ul>
+<li>General
+<ul>
+<li>Default Printing Speed: フィラメントに合わせて設定</li>
+</ul>
+</li>
+</ul>
+<h3 id="output">Output</h3>
+<p>基本的に一度設定したら変更する必要はありません。Creality K1 のデフォルトプロファイルではサムネイルを生成できないので、その部分は手動で設定が必要です。</p>
+<ul>
+<li>
+<p>General</p>
+<ul>
+<li><strong>Thumbnail Encoding</strong>: OctoPrint, Klipper, Sonic Pad, Duet, Prusa</li>
+<li><strong>Thumbnail Image Sizes</strong>: 96x96, 300x300</li>
+</ul>
+</li>
+<li>
+<p>Machine Definition (デフォルトプロファイルのまま)</p>
+<ul>
+<li>Build Volume: 220x220x250 (X, Y, Z)</li>
+<li>Origin Offset: 0 0 0 (X, Y, Z)</li>
+<li>Homing Direction: Min Min Min (X, Y, Z)</li>
+<li>Flip displayed axis direction: OFF, ON, OFF (X, Y, Z)</li>
+</ul>
+</li>
+<li>
+<p>Global Offsets</p>
+<ul>
+<li><strong>Z-Axis</strong>: 0.05mm (エレファントフット対策)</li>
+</ul>
+</li>
+</ul>
+<h3 id="scripts">Scripts</h3>
+<p>基本的に一度設定したら変更する必要はありませんが、デフォルトプロファイルでは印刷前の温度設定や印刷後のベッド退避などが出来ないので手動で設定が必要です。</p>
+<ul>
+<li><strong>Starting</strong>:</li>
+</ul>
+<pre><code>START_PRINT EXTRUDER_TEMP=[extruder0_temperature] BED_TEMP=[platform0_temperature]
+</code></pre>
+<ul>
+<li><strong>Ending</strong>:</li>
+</ul>
+<pre><code>END_PRINT
+</code></pre>
+<ul>
+<li><strong>Post Processing</strong>:</li>
+</ul>
+<pre><code>{REPLACE &quot;thumbnail begin 300x300&quot; &quot;png begin 300*300&quot;}
+{REPLACE &quot;thumbnail begin 96x96&quot; &quot;png begin 96*96&quot;}
+{REPLACE &quot;thumbnail end&quot; &quot;png end&quot;}
+</code></pre>
+<h3 id="other">Other</h3>
+<p>基本的にデフォルトのままで問題ありません。ブリッジパラメータは未確認。</p>
+<h3 id="advanced">Advanced</h3>
+<p>基本的にデフォルトのままで問題ありませんが、ひっかき傷抑止設定をしておくと良いです。</p>
+<ul>
+<li>Ooze Control Behavior
+<ul>
+<li><strong>Force retraction on top layers</strong>: ON (Anti-scar)</li>
+<li><strong>Only vertical lift on top layers</strong>: ON (Anti-scar)</li>
+</ul>
+</li>
+</ul>
+<h1 id="設定値補足">設定値補足</h1>
+<h3 id="レイヤー高さ">レイヤー高さ</h3>
+<p>レイヤー高さは接着性の観点からノズル径の75%以下にすると良いので、私は基本的に 0.3㎜ としています。その上でよりなだらかな曲面にしたい場合は Adaptive Layer Height を有効にして実力 0.1mm強 くらいでスライスしています。なお、レイヤー高さを低くすると印刷物がノズルに引っ張られる力が（レイヤー高さが高い場合と比べて）強くなるので、併せてサポートを強くする必要があります。</p>
+<h3 id="gcode-マクロ">gcode マクロ</h3>
+<p>Creality K1 で使用されているマクロ (START_PRINT, END_PRINT など) は github で公開されています。</p>
+<p>参考(独自マクロ定義): <a href="https://github.com/CrealityOfficial/K1_Series_Klipper/blob/main/config/K1_CR4CU220812S12/gcode_macro.cfg">https://github.com/CrealityOfficial/K1_Series_Klipper/blob/main/config/K1_CR4CU220812S12/gcode_macro.cfg</a></p>
+<h3 id="サムネイル">サムネイル</h3>
+<p>Simplify3D の Creality K1 向けデフォルトプロファイルではサムネイルは生成されません。Creality K1 は 300x300 および 96x96 のサムネイルを読み込み・表示するので Process Settings のサムネイル設定で 300x300 および 96x96 のサムネイルを gcode に埋め込むように設定する必要があります。</p>
+<p>また、Simplify3D は以下のようなサムネイルを生成するのですが</p>
+<pre><code>; thumbnail begin 96x96 3773 16 79 15
+; // サムネイルのバイナリ値 (省略) //
+; thumbnail end
+</code></pre>
+<p>Creality K1 は以下のようなサムネイルを読み込みます。</p>
+<pre><code>; png begin 96*96 3773 16 79 15
+; // サムネイルのバイナリ値 (省略) //
+; png end
+</code></pre>
+<p>Process Settings の Scripts タブにある Post Processing に以下の3行を追加してこれらの差異を置換でなんとかする必要があります。</p>
+<pre><code>{REPLACE &quot;thumbnail begin 300x300&quot; &quot;png begin 300*300&quot;}
+{REPLACE &quot;thumbnail begin 96x96&quot; &quot;png begin 96*96&quot;}
+{REPLACE &quot;thumbnail end&quot; &quot;png end&quot;}
+</code></pre>
+<p>参考: <a href="https://forum.simplify3d.com/viewtopic.php?t=23175">Thumbnail - Simplify3D User Forum</a></p>
+<h3 id="エレファントフット対策">エレファントフット対策</h3>
+<p>Simplify3D のデフォルトプロファイルで生成した gcode を Creality K1 で印刷するとエレファントフットになります。<strong>Edit Process Settings -&gt; Layer -&gt; Dimensional Adjustments</strong> で補償値を設定するか <strong>Edit Process Settings -&gt; Output -&gt; Global Offset</strong> でZ方向に 0.05mm 程度オフセットすると多少マシになります。</p>
+<h3 id="ブリム">ブリム</h3>
+<p>スカートのオフセットを 0mm に設定するとブリムになるという仕様上、ブリムとサポートが干渉するとブリムが接着されない領域ができました。バグなのですが設定で回避するのが良さそうです。</p>
+<h3 id="ラフト">ラフト</h3>
+<p>Creality K1 のベッドは高速でも剥がれず接着できるのですが、Simplify3D はやたら太いラフトを出力するので、厚いラフトを使用する場合は初期レイヤーの速度を十分に落とす必要があります。普通のラインなら問題なく出力できる速度であってもラフト印刷時は吐出能力を超える速度となることがあります。</p>
+<h3 id="ひっかき傷抑止">ひっかき傷抑止</h3>
+<p>スライスアルゴリズムの改良でひっかき傷がつきにくくなっていますが、3Dプリンタの能力次第でひっかき傷がつくことがあります。実際 Creality K1 でアイロニングを試したところ傷がつきました。この問題は移動時にエクストルーダ持ち上げることで対処することができ、設定箇所は Extruder タブの <strong>Retract Vertical Lift</strong> と Advanced タブの <strong>Only vertical lift on top layers</strong> となります。</p>
+<p>参考: <a href="https://forum.simplify3d.com/viewtopic.php?t=17204">Where is Anti-scar settings? - Simplify3D User Forum</a></p>
+<h1 id="機能補足">機能補足</h1>
+<h3 id="machine-control">Machine Control</h3>
+<p>Simplify3D は Klipper 搭載の3Dプリンタを遠隔操作することができるのですが Klipper ベースの Creality K1 は動きません。Webブラウザで (http://&lt;IP&gt;/#/home) にアクセスすれば、遠隔で モータ駆動、gcode ファイルのアップロードや印刷、ベッド傾きの確認などを行うことが可能なので、とりあえずそちらで代用するのが良さそうです。</p>
+<p>参考: <a href="https://forum.simplify3d.com/viewtopic.php?t=17321">Creality K1 WiFi - Simplify3D User Forum</a></p>
+<h3 id="指定高さで異なるプロセス">指定高さで異なるプロセス</h3>
+<p>Simplify3D には指定高さでプロセスを切り替えるという機能があります。例えば、モデルの土台部分とそれ以外でインフィルを変えたりすることができます。<strong>Edit Process Settings -&gt; Custom Zones&hellip;</strong> から設定できます。</p>
+<h3 id="モデル毎に異なるプロセス">モデル毎に異なるプロセス</h3>
+<p>Simplify3D には複数のモデルを一度にプリントする際にモデル毎に異なるプロセスを適用することができます。これは <strong>Edit Process Settings -&gt; Select Models&hellip;</strong> から設定できます。</p>
+<h1 id="その他">その他</h1>
+<ul>
+<li>インフィル形状の特徴に関しては Prusa Knowledge Base が参考になります
+<ul>
+<li>参考: <a href="https://help.prusa3d.com/ja/article/%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3_177130">インフィルのパターン | Prusa Knowledge Base</a></li>
+</ul>
+</li>
+<li>シーム位置確認には Prusa Slicer の gcode ビューアを使うと分かりやすい</li>
+<li>Pressure Advance 関連は未確認
+<ul>
+<li>参考: <a href="https://wiki.creality.com/en/Software/creality-print/CalibrationTutorial">Creality Print Calibration Tutorial | Creality Wiki</a></li>
+</ul>
+</li>
+</ul>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2024 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>
