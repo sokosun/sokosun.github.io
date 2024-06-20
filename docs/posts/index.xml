@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Thu, 20 Jun 2024 11:15:01 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2024 18:54:19 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>タングルティーザー用持ち手制作記録</title>
+      <link>https://sokosun.github.io/posts/20240620_tangle_teezer_handle/</link>
+      <pubDate>Thu, 20 Jun 2024 18:54:19 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240620_tangle_teezer_handle/</guid>
+      <description>概要 タングルティーザー（ザ・オリジナル）用持ち手の制作記録。主にワークフロー。
+はじめに タングルティーザーという絡みにくいことで有名なヘアブラシがあるのですが、標準品（ザ・オリジナル）は滑りやすい形状・材質のため使用中にすっぽ抜けることがあり不満に思っていたので持ち手を制作することにしました。なお、現在は持ち手つきモデルが存在するので、新規購入するならそちらをお勧めします。
+完成品 少しあそびがあるのでゴムで抑えています。</description>
+    </item>
     <item>
       <title>コスプレ用ヘアクリップ設計</title>
       <link>https://sokosun.github.io/posts/20240620_hairclip_for_cosplay/</link>
