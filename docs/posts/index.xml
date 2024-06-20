@@ -7,8 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Sat, 17 Feb 2024 15:54:13 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2024 11:15:01 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>コスプレ用ヘアクリップ設計</title>
+      <link>https://sokosun.github.io/posts/20240620_hairclip_for_cosplay/</link>
+      <pubDate>Thu, 20 Jun 2024 11:15:01 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20240620_hairclip_for_cosplay/</guid>
+      <description>概要 コスプレ用にヘアクリップを3Dプリントで制作した際に、簡単な固定方法を検討して追い込んだ形状の記録。
+固定方法検討 100g 程度のそこそこ重いヘアクリップを滑り落ちないように固定したかったので、バネを仕込んだり、レンズの絞りみたいな構造で挟み込んだりすることを考えたのですが、設計が面倒なので既成ヘアクリップと合体させる方向で進めました。</description>
+    </item>
     <item>
       <title>Simplify3D でツリーサポート</title>
       <link>https://sokosun.github.io/posts/20240217_s3d_custom_support/</link>
