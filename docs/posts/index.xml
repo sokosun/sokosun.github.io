@@ -7,8 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Sun, 11 Aug 2024 16:31:28 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2024 11:53:25 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 まとめ</title>
+      <link>https://sokosun.github.io/posts/20241231_summary/</link>
+      <pubDate>Tue, 31 Dec 2024 11:53:25 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20241231_summary/</guid>
+      <description>3行要約 無職1年目の昨年と比べて初めてのタスクが少なくなったので、その分趣味に費やすことができました。特に旅行・3Dプリント・電子工作・読書・コスプレ。一方でアニメ・ゲームに費やす時間は減った気がします。
+買ってよかったもの（？） エアコン 寒い部屋で眠ると血管に負担がかかると聞いたので、ハイセンスの一番安いやつをホームセンターで購入して、暖房用として寝室に設置。実際6月に買ったのに冷房は一度も使いませんでした。</description>
+    </item>
     <item>
       <title>花瓶モード条件出し</title>
       <link>https://sokosun.github.io/posts/20240811_vasemode/</link>
