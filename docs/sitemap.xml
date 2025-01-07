@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sokosun.github.io/posts/20241231_summary/</loc>
-    <lastmod>2024-12-31T11:53:25+09:00</lastmod>
-  </url><url>
     <loc>https://sokosun.github.io/</loc>
-    <lastmod>2024-12-31T11:53:25+09:00</lastmod>
+    <lastmod>2025-01-07T10:34:36+09:00</lastmod>
   </url><url>
     <loc>https://sokosun.github.io/posts/</loc>
+    <lastmod>2025-01-07T10:34:36+09:00</lastmod>
+  </url><url>
+    <loc>https://sokosun.github.io/posts/20250107_poi_proto/</loc>
+    <lastmod>2025-01-07T10:34:36+09:00</lastmod>
+  </url><url>
+    <loc>https://sokosun.github.io/posts/20241231_summary/</loc>
     <lastmod>2024-12-31T11:53:25+09:00</lastmod>
   </url><url>
     <loc>https://sokosun.github.io/posts/20240811_vasemode/</loc>

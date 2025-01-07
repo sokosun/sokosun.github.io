@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ビジュアルポイ（のパチモン）プロトタイピング</title>
+<meta name="description" content="概要 コスプレ撮影でライトペインティングをやってみたくなったので道具を自作（試作）してみたまとめ
+はじめに 光物を使ってコスプレ撮影をしてみたいと思っていたところ、ビジュアルポイなるものがあることを知りました。調べてみたら道具が1組40万円くらいするようで、さすがに高いと思ったのと基本的な機能だけならすぐできる（実際、実働2日で完成）と思ったので自作してみました。
+ビジュアルポイ ビジュアルポイには長さ違いでバリエーションがあります。">
+<link rel="canonical" href="https://sokosun.github.io/posts/20250107_poi_proto/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.356a2087b004aa122c83c24f9c1adbc6812496621e09e70f705f13257d28ad34.css" integrity="sha256-NWogh7AEqhIsg8JPnBrbxoEklmIeCecPcF8TJX0orTQ=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">ビジュアルポイ（のパチモン）プロトタイピング</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2025-01-07 10:34:36 &#43;0900 JST" title="2025-01-07 10:34:36 &#43;0900 JST">
+    7 January 2025
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>コスプレ撮影でライトペインティングをやってみたくなったので道具を自作（試作）してみたまとめ</p>
+<h1 id="はじめに">はじめに</h1>
+<p>光物を使ってコスプレ撮影をしてみたいと思っていたところ、ビジュアルポイなるものがあることを知りました。調べてみたら道具が1組40万円くらいするようで、さすがに高いと思ったのと基本的な機能だけならすぐできる（実際、実働2日で完成）と思ったので自作してみました。</p>
+<h1 id="ビジュアルポイ">ビジュアルポイ</h1>
+<p>ビジュアルポイには長さ違いでバリエーションがあります。</p>
+<table>
+<thead>
+<tr>
+<th>バリエーション</th>
+<th>発光領域</th>
+<th>価格(税込・2本1組)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual Poi V5 Maxi</td>
+<td>240px / 524mm</td>
+<td>$2190</td>
+</tr>
+<tr>
+<td>Visual Poi V5 Classic</td>
+<td>160px / 349mm</td>
+<td>$1490</td>
+</tr>
+<tr>
+<td>Visual Poi V5 Mini</td>
+<td>80px / 175mm</td>
+<td>$790</td>
+</tr>
+</tbody>
+</table>
+<p>試作するにあたっては長い Maxi を参考にしました。
+<a href="https://www.lighttoys.cz/product/visual-poi-v5-maxi/">https://www.lighttoys.cz/product/visual-poi-v5-maxi/</a></p>
+<h1 id="構成検討">構成検討</h1>
+<p>機能試作なので以下の点を割り切りました。材料費は1本2000円くらいになりました。</p>
+<ul>
+<li>電源は有線(USB 5V)で供給</li>
+<li>発光領域は 72px / 500mm</li>
+<li>汎用の WS2812B RGB LED strip (144LEDs/m 12mm幅)を使用 (参考価格 \700/m)</li>
+<li>ケースは透明のモールを使用 (参考価格 \174/m)</li>
+<li>制御用MCUには AtomS3 Lite (ESP32-S3) を使用 (参考価格 \1227)</li>
+</ul>
+<h1 id="完成品">完成品</h1>
+
+
+<!-- Shortcode 'video.html' -->
+
+<figure >
+  <video playsinline controls class="player" preload="metadata" data-poster="" width=100% >
+    <source src="/media/poi_proto.mp4">
+    &lt;video&gt;
+  </video>
+  
+  
+</figure>
+
+<p>LEDの発光周期にあわせてポイを振ると画になります。また振ったときにずれないように、持ち手とモールのねじ穴が嵌るように設計して3Dプリントしました。</p>
+<p>// 中心がぶれないように等速で回転させて綺麗に絵を出すなら、紐付けて振り回すのが常道なのですが、さすがに長いので屋内でやるのは危ないですし、イベントでは基本禁止なのでその辺は要検討ですね</p>
+<h1 id="サンプルプログラム">サンプルプログラム</h1>
+<p><a href="https://github.com/sokosun/atoms3_ws2812b_poi">https://github.com/sokosun/atoms3_ws2812b_poi</a></p>
+<p>poi_image_converter.py, rawdata_converter.py のスクリプトを使用して画像データ(image1.h)を生成しています。</p>
+<p><img src="../../media/poi_proto_image1_circle.png" alt="">
+↓ poi_image_converter.py
+<img src="../../media/poi_proto_image1.png" alt="">
+↓ rawdata_converter.py<br>
+image1.h</p>
+<h1 id="今後の課題">今後の課題</h1>
+<ul>
+<li><strong>LED 高密度化</strong>
+<ul>
+<li>200LEDs/m, 5mm幅 の RGB LED strip をずらして並べて 200px / 500mm にしたい
+<ul>
+<li>ただし LED 数が増えるとリフレッシュレートが犠牲になる (72LED なら 400Hz, 100LED なら 337Hz, 200LED なら 168Hz) ので SPI 2並列で高速化したい</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>バッテリ内蔵化</strong>
+<ul>
+<li>持ち手に単3電池を仕込んで電池駆動できるようにしたい</li>
+</ul>
+</li>
+<li><strong>姿勢/加速度検出＆補正</strong>
+<ul>
+<li>ポイの先にセンサ積んで描画タイミングを制御したい</li>
+</ul>
+</li>
+<li><strong>持ち手改良</strong>
+<ul>
+<li>取り回しやすい形に修正したい</li>
+</ul>
+</li>
+</ul>
+<p>なお無線で描画制御、ファイルシステム実装などは今のところ考えていません。</p>
+<h1 id="感想">感想</h1>
+<p>ビジュアルポイの仕様を調べていくと、応答性・解像度・演色性・信頼性もろもろ出すための独自設計入っているなという感じがしました。写真撮影用に割り切るなら自作品でもそこそこ使えるかもしれませんが、ライブでライトペインティングやりたいなら汎用品くっつけて上っ面のソフトウェアだけ揃えてやるだけでは性能面で全然敵わないって感じでしょうか。</p>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2025 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>
