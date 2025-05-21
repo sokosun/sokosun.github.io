@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sokosun.github.io/</loc>
-    <lastmod>2025-01-07T10:34:36+09:00</lastmod>
+    <lastmod>2025-05-21T15:47:07+09:00</lastmod>
   </url><url>
     <loc>https://sokosun.github.io/posts/</loc>
-    <lastmod>2025-01-07T10:34:36+09:00</lastmod>
+    <lastmod>2025-05-21T15:47:07+09:00</lastmod>
+  </url><url>
+    <loc>https://sokosun.github.io/posts/20250521_ws2812_pio/</loc>
+    <lastmod>2025-05-21T15:47:07+09:00</lastmod>
   </url><url>
     <loc>https://sokosun.github.io/posts/20250107_poi_proto/</loc>
     <lastmod>2025-01-07T10:34:36+09:00</lastmod>

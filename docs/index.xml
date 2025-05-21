@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Tue, 07 Jan 2025 10:34:36 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 May 2025 15:47:07 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ws2812.pio</title>
+      <link>https://sokosun.github.io/posts/20250521_ws2812_pio/</link>
+      <pubDate>Wed, 21 May 2025 15:47:07 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20250521_ws2812_pio/</guid>
+      <description>概要 Raspberry pi pico SDK にある ws2812.</description>
+    </item>
     <item>
       <title>ビジュアルポイ（のパチモン）プロトタイピング</title>
       <link>https://sokosun.github.io/posts/20250107_poi_proto/</link>

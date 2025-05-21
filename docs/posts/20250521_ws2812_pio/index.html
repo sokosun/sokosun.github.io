@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja-jp" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ws2812.pio</title>
+<meta name="description" content="概要 Raspberry pi pico SDK にある ws2812.">
+<link rel="canonical" href="https://sokosun.github.io/posts/20250521_ws2812_pio/">
+<link rel="robots" href="/robots.txt" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="https://sokosun.github.io/css/app.min.356a2087b004aa122c83c24f9c1adbc6812496621e09e70f705f13257d28ad34.css" integrity="sha256-NWogh7AEqhIsg8JPnBrbxoEklmIeCecPcF8TJX0orTQ=" ><link rel="stylesheet" href="https://sokosun.github.io/css/user.css" >
+</head>
+    <body class="max-w-screen-md px-10 mx-auto">
+        <header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<div class="flex-none w-20 h-20 rounded-full overflow-hidden" >
+    <a href="https://sokosun.github.io/">
+        <img srcset="/img/avatar_huccb1c91a93419a0544d9f657f0a40af0_10466_80x80_fill_q90_box_smart1_3.png 80w" src="/img/avatar.png" width="80" height="80" alt="X に書ききれないことはここに">
+    </a>
+</div>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://sokosun.github.io/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">X に書ききれないことはここに</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/posts">Posts</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header>
+        <main id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">ws2812.pio</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2025-05-21 15:47:07 &#43;0900 JST" title="2025-05-21 15:47:07 &#43;0900 JST">
+    21 May 2025
+</time>
+        
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <h1 id="概要">概要</h1>
+<p>Raspberry pi pico SDK にある ws2812.pio のデータフォーマットを調べたのでその記録。</p>
+<h1 id="背景">背景</h1>
+<p>Raspberry pi pico の PIO (Programmable Input/Output block) ペリフェラルを使用すると WS2812B RGB LED strip を制御しやすい (pico-sdk にサンプルが含まれる) ことが分かったので試してみました。ただデータフォーマットが分かりにくかったので確認したことを記録しておきます。</p>
+<h1 id="コード修正">コード修正</h1>
+<p>オリジナルの ws2812_parallel は32本のLEDストリップを制御できるのですが、そこまで必要としないので4本に修正します。（この修正でデータフォーマットが変化します）</p>
+<p>※実際には3本のLEDストリップで十分なのですが、4本にすると生データが4bit区切りになって扱いやすいので4本としています</p>
+<p>オリジナル</p>
+<pre><code>.wrap_target
+  out x, 32
+  mov pins, !null [2]
+  mov pins, x     [2]
+  mov pins, null  [2]
+.wrap
+</code></pre>
+<p>修正後</p>
+<pre><code>.wrap_target
+  out x, 4
+  mov pins, !null [2]
+  mov pins, x     [2]
+  mov pins, null  [2]
+.wrap
+</code></pre>
+<h1 id="データフォーマット">データフォーマット</h1>
+<h2 id="ws2812">ws2812</h2>
+<p>ws2812 は RGB モード と RGBW モード の2種類が選択できますが、どちらも 32bit が 1LED に対応します。RGB モードの場合は W7~W0 を 0 にしておけば問題ありません。</p>
+<p>Format:<br>
+[G7(MSB)][G6]..[G0][R7][R6]..[R0][B7][B6]..[B0][W7][W6]..[W0]</p>
+<p>サンプルコード (LED の指令値が pio_packet にこのフォーマットで格納されます)</p>
+<pre><code>  uint offset0 = pio_add_program(pio0, &amp;ws2812_program);
+  auto sm0 = pio_claim_unused_sm(pio0, true);
+  ws2812_program_init(pio0, sm0, offset0, WS2812_SIGNAL0_PIN, 800000, false);
+  dma_channel_config dma0_conf = dma_channel_get_default_config(DMA0);
+  channel_config_set_dreq(&amp;dma0_conf, pio_get_dreq(pio0, sm0, true));
+  channel_config_set_transfer_data_size(&amp;dma0_conf, DMA_SIZE_32);
+  channel_config_set_read_increment(&amp;dma0_conf, true);
+  dma_channel_configure(DMA0, &amp;dma0_conf, &amp;pio0-&gt;txf[sm0], NULL, NUM_OF_LEDs, false);
+
+// Refresh LEDs
+  uint32_t pio_packet[NUM_OF_LEDs];
+  /* Fill pio_packet here */
+  dma_channel_set_read_addr(DMA0, (void*)pio_packet, true);
+</code></pre>
+<h2 id="ws2812_parallel-修正版">ws2812_parallel (修正版)</h2>
+<p>ws2812_parallel は 4本の LED strip を制御できる関係で、ws2812 とは異なり、データのインタリーブとビットスワップが必要になります。また 96bit がストリップあたり 1LED (4ストリップで合計 4LED) に対応します。なお 4ストリップにつながる GPIO は連番である必要があります。</p>
+<p>Format:<br>
+[STRIP3-G0(MSB)][STRIP2-G0][STRIP1-G0][STRIP0-G0][STRIP3-G1][STRIP2-G1][STRIP1-G1][STRIP0-G1] &hellip; [STRIP3-G7][STRIP2-G7][STRIP1-G7][STRIP0-G7]</p>
+<p>[STRIP3-R0][STRIP2-R0][STRIP1-R0][STRIP0-R0][STRIP3-R1][STRIP2-R1][STRIP1-R1][STRIP0-R1] &hellip; [STRIP3-R7][STRIP2-R7][STRIP1-R7][STRIP0-R7]</p>
+<p>[STRIP3-B0][STRIP2-B0][STRIP1-B0][STRIP0-B0][STRIP3-B1][STRIP2-B1][STRIP1-B1][STRIP0-B1] &hellip; [STRIP3-B7][STRIP2-B7][STRIP1-B7][STRIP0-B7]</p>
+<p>サンプルコード (LED の指令値が pio_packet にこのフォーマットで格納されます)</p>
+<pre><code>  uint offset0 = pio_add_program(pio0, &amp;ws2812_parallel_program);
+  auto sm0 = pio_claim_unused_sm(pio0, true);
+  ws2812_parallel_program_init(pio0, sm0, offset0, WS2812_SIGNAL0_PIN, 4, 800000);
+  dma_channel_config dma0_conf = dma_channel_get_default_config(DMA0);
+  channel_config_set_dreq(&amp;dma0_conf, pio_get_dreq(pio0, sm0, true));
+  channel_config_set_transfer_data_size(&amp;dma0_conf, DMA_SIZE_32);
+  channel_config_set_read_increment(&amp;dma0_conf, true);
+  dma_channel_configure(DMA0, &amp;dma0_conf, &amp;pio0-&gt;txf[sm0], NULL, 3*NUM_OF_LEDs, false);
+
+// Refresh LEDs
+  uint32_t pio_packet[3*NUM_OF_LEDs];
+  /* Fill pio_packet here */
+  dma_channel_set_read_addr(DMA0, (void*)pio_packet, true);
+</code></pre>
+
+    </section>
+    
+    
+    
+
+    
+    
+
+    <footer>
+        
+
+    </footer>
+</article>
+
+        </main><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2025 — <a class="hover:text-gray-500" href="https://sokosun.github.io/">X に書ききれないことはここに</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://twitter.com/sokoX2" target="_blank" rel="noopener noreferrer">X</a></li><li><a class="hover:text-gray-500" href="https://github.com/sokosun/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>
