@@ -7,8 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Wed, 21 May 2025 15:47:07 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jun 2025 13:12:29 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>オレオレポイ V2</title>
+      <link>https://sokosun.github.io/posts/20250603_poi_v2/</link>
+      <pubDate>Tue, 03 Jun 2025 13:12:29 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20250603_poi_v2/</guid>
+      <description>概要 振ると光で絵が描ける棒（オレオレポイ）を改良したのでそのまとめ。
+完成写真 仕様 LED密度 240LEDs/500mm リフレッシュレート 400Hz RP2350 の PIO で制御 DIP SW で表示内容選択 Push SW でタイミング制御 単3電池駆動 接続 サンプルコード</description>
+    </item>
     <item>
       <title>ws2812.pio</title>
       <link>https://sokosun.github.io/posts/20250521_ws2812_pio/</link>
