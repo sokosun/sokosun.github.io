@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Wed, 30 Jul 2025 16:25:52 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 14:51:57 +0900</lastBuildDate>
     <atom:link href="https://sokosun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skyloong GK61 Pro</title>
+      <link>https://sokosun.github.io/posts/20250818_gk61pro/</link>
+      <pubDate>Mon, 18 Aug 2025 14:51:57 +0900</pubDate>
+      <guid>https://sokosun.github.io/posts/20250818_gk61pro/</guid>
+      <description>概要 Skyloong GK61 Pro (有線版、KTT ローズピンク軸)というキーボードを試してみて気づいたことのまとめ。</description>
+    </item>
     <item>
       <title>Mobvoi TicWatch Pro 5</title>
       <link>https://sokosun.github.io/posts/20250730_ticwatchpro5/</link>
